@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuno Beller Entwicklungstabelle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <style>
+        .alert-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 1rem;
+            z-index: 1050; /* Ensure it is above other content */
+            display: flex;
+            flex-direction: column; /* Stack alerts vertically */
+            gap: 0.5rem; /* Add space between alerts */
+        }
+        .nav-link.active {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary-subtle">
+    <a class="navbar-brand m-lg-2" href="{{ url_for('index') }}">Kuno Beller Entwicklungstabelle</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
+            <div class="d-flex">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == url_for('new_incident') %}active{% endif %}" href="{{ url_for('new_incident') }}">Startseite</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == url_for('incidents') %}active{% endif %}" href="{{ url_for('incidents') }}">Einsatzliste</a>
+                </li>
+
+                {% if current_user.permission_level >= 1 %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == url_for('change_password', userid=current_user.userid) %}active{% endif %}" href="{{ url_for('change_password', userid=current_user.userid) }}">Passwort ändern</a>
+                </li>
+                {% endif %}
+                {% if current_user.user_role == 2 %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == url_for('user_management') %}active{% endif %}" href="{{ url_for('user_management') }}">Nutzerverwaltung</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == url_for('vehicle_management') %}active{% endif %}" href="{{ url_for('vehicle_management') }}">Fahrzeugverwaltung</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == url_for('location_management') %}active{% endif %}" href="{{ url_for('location_management') }}">Raumverwaltung</a>
+                </li>
+                {% endif %}
+            </div>
+            <li class="nav-item d-flex align-items-center mx-auto">
+                <span class="navbar-text" style="font-weight: bolder">Hi, {{ current_user.given_name }}!</span>
+            </li>
+            <li class="nav-item ml-auto">
+                <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="alert-container">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</div>
+<script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            var alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                var bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            });
+        }, 3000);
+    });
+</script>
+</body>
+</html>

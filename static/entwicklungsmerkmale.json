@@ -1,0 +1,1179 @@
+{
+    "phaseToAge": {
+        "phase1": 3,
+        "phase2": 6,
+        "phase3": 9,
+        "phase4": 12,
+        "phase5": 18,
+        "phase6": 24,
+        "phase7": 30,
+        "phase8": 36,
+        "phase9": 42,
+        "phase10": 48,
+        "phase11": 54,
+        "phase12": 60,
+        "phase13": 66,
+        "phase14": 72
+    },
+    "sectors": {
+        "personalHygiene": {
+            "name": "Körperpflege",
+            "phase1": {
+                "items": [
+                    {
+                        "description": "Beruhigt sich nach dem Füttern.",
+                        "example": "Liegt da mit offenen Augen, lallt, schläft ein"
+                    },
+                    {
+                        "description": "Zeigt ruhige Aktivitäten, wenn es wach ist.",
+                        "example": "Hört Gesang und anderen Geräuschen zu, hält ein und schaut, beschäftigt sich kurze Zeit mit sich, betrachtet sein Hände."
+                    },
+                    {
+                        "description": "Gurrt und macht andere Geräusche.",
+                        "example": "Macht Gurgel- und Grunzgeräusche, wimmert, äußert Vokallaute."
+                    },
+                    {
+                        "description": "Hat regelmäßigen Schlaf und Wachrythmus.",
+                        "example": "Schläft morgens und nachmittags zu bestimmten Zeiten."
+                    }
+                ]
+            },
+            "phase2": {
+                "items": [
+                    {
+                        "description": "Wird auf dem Schoß sitzend gefüttert.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Wird mit dem Löffel gefüttert oder greift nach der Flasche.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Schläft nachts durch.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Zahnt.",
+                        "example": "Macht Mundbewegungen, sabbert, wimmert."
+                    }
+                ]
+            },
+            "phase3": {
+                "items": [
+                    {
+                        "description": "Füttert sich selbst kleine Happen Essen.",
+                        "example": "Kekse, Brothappen, Fruchtstücke"
+                    },
+                    {
+                        "description": "Trinkt mit Hilfe aus einer Tasse.",
+                        "example": "Schließt den Mund um die Tassenkante, beißt auf die Tassenkante, steckt die Zunge in die Tasse hinein."
+                    },
+                    {
+                        "description": "Hält einen zweiten Löffel, wenn es gefüttert wird oder versucht nach dem Löffel zu greifen.",
+                        "example": "Schlägt mit dem Löffel auf den Tisch, steckt ihn in den Mund, spielt mit ihm."
+                    },
+                    {
+                        "description": "Hält die Flasche",
+                        "example": ""
+                    }
+                ]
+            },
+            "phase4": {
+                "items": [
+                    {
+                        "description": "Schiebt sich mit dem Löffel Essen in den Mund und versucht den Löffel selbst zu füllen",
+                        "example": ""
+                    },
+                    {
+                        "description": "Versucht allein aus der Tasse zu trinken.",
+                        "example": "Umfasst mit beiden Händen die Tasse und führt sie zum Mund; beim Trinken selbst noch sehr ungeschickt, es wird noch viel verschüttet."
+                    },
+                    {
+                        "description": "Kooperiert beim An- und Ausziehen.",
+                        "example": "Versucht mitzuhelfen, z.B. hebt den Arm oder das Bein."
+                    }
+                ]
+            },
+            "phase5": {
+                "items": [
+                    {
+                        "description": "Zeigt Interesse an der Toilette.",
+                        "example": "Rollt Toilettenpapier ab, spielt mit Wasser, benutzt die Toilettenspülung, zieht an der Windel, wenn sie nass ist."
+                    },
+                    {
+                        "description": "Isst ohne Hilfe mit dem Löffel.",
+                        "example": "Zeigt gute Koordination, wenn es selbst isst; isst selbst entweder unaufgefordert oder wenn man ihm einen Löffel in die Hand gibt."
+                    },
+                    {
+                        "description": "Trinkt allein aus der Tasse.",
+                        "example": "Umfasst die Tasse oder das Glas mit beiden Händen oder greift die Tasse am Henkel; trink, ohne viel zu verschütten."
+                    },
+                    {
+                        "description": "Zieht einige Sachen selbst aus.",
+                        "example": "Mütze, Schal, Jacke."
+                    }
+                ]
+            },
+            "phase6": {
+                "items": [
+                    {
+                        "description": "Benutzt Seife, um die Hände zu waschen.",
+                        "example": "Nimmt die Seife in die Hand, macht sie nass und spült die Hände."
+                    },
+                    {
+                        "description": "Zieht sich einige weitere Kleidungsstücke selbst aus.",
+                        "example": "Schuhe, Socken, Hose."
+                    },
+                    {
+                        "description": "Hilft beim Saubermachen und Aufräumen.",
+                        "example": "Bringt die Puppe zu Bett oder das Auto in die Garage; wirft Abfälle in den Papierkorb, stellt Spielzeug ins Regal, wischt den Tisch ab."
+                    },
+                    {
+                        "description": "Gibt vor auf die Toilette zu gehen.",
+                        "example": "Spielt mit Toilettenpapier, rollt Toilettenpapier direkt ins Becken oder in den Topf hinein, sitzt (manchmal) auf dem Topf und tut so, als ob es wirklich in den Topf."
+                    },
+                    {
+                        "description": "Geht mit dem Taschentuch um.",
+                        "example": "Wischt das Gesicht mit dem Papiertaschentuch, zerknittert es und wirft es weg."
+                    },
+                    {
+                        "description": "Zeigt Interesse am Zähneputzen.",
+                        "example": "Imitiert Putzbewegungen mit der Zahnbürste, schluckt Zahnpasta oder Wasser, das ihm zum Ausspülen angeboten wird."
+                    }
+                ]
+            },
+            "phase7": {
+                "items": [
+                    {
+                        "description": "Will Dinge allein tun.",
+                        "example": "Sich anziehen, Spielzeug holen, ausschneiden, kleben, Schuhe zuschnallen, Mantel aufhängen."
+                    },
+                    {
+                        "description": "Bleibt tagsüber trocken.",
+                        "example": "Geht von selbst zur Toilette oder wenn es erinnert wird."
+                    },
+                    {
+                        "description": "Wäscht Hände ohne Hilfe und trocknet sie ab.",
+                        "example": "Dreht den Wasserhahn an, unterscheidet zwischen heißem und kaltem Wasserhahn; nimmt das Handtuch, auch wenn es die Hände nicht vollständig abtrocknet."
+                    },
+                    {
+                        "description": "Lerne seine Zähne zu bürsten.",
+                        "example": "Drückt Zahnpasta auf die Zahnbürste, bewegt die Zahnbürste im Mund."
+                    },
+                    {
+                        "description": "Putzt seine Nase.",
+                        "example": "Schnaubt ganz leicht in das Taschentuch."
+                    },
+                    {
+                        "description": "Versucht, allein Socken und Unterwäsche anzuziehen.",
+                        "example": "Zieht Socken an, ohne den richtigen Sitz der Ferse oder Zehen zu berücksichtigen; zieht die Hose an, richtig oder verkehrt herum."
+                    },
+                    {
+                        "description": "Hilft freiwillig den Raum aufzuräumen und sauberzumachen.",
+                        "example": "Schließt sich spontan dem Erzieher an, wenn er anfängt, Spielzeuge und andere Gegendstände wegzuräumen."
+                    },
+                    {
+                        "description": "Übernimmt die Verantwortung für kleinere Besorgungen und erledigt sie.",
+                        "example": "Verteilt Servietten, Teller und Bestecke vor gemeinsamen Mahlzeiten; sammelt Scheren und Papier ein, trägt schriftliche Mitteilungen von einem Zimmer in das andere."
+                    }
+                ]
+            },
+            "phase8": {
+                "items": [
+                    {
+                        "description": "Isst und trinkt selbstständig.",
+                        "example": "Hält den Löffel so, dass nicht alles herunterfällt; hält die Tasse, ohne alles zu verschütten."
+                    },
+                    {
+                        "description": "Wäscht Gesicht und Hände ohne Hilfe.",
+                        "example": "Tut Seife auf den Waschlappen oder auf die Hände und wäscht sich das Gesicht mit dem einen oder anderen, ohne dass es dabei Hilfe benötigt."
+                    },
+                    {
+                        "description": "Bürstet seine Zähne.",
+                        "example": "Drückt Pasta auf die Zahnbürste, steckt sie in den Mund, bewegt sie und spült den Mund mit Wasser aus."
+                    },
+                    {
+                        "description": "Geht von selbst zur Toilette.",
+                        "example": "Muss nur selten erinnert werden, etwa wenn es in eine Tätigkeit versunken ist, versorgt sich dabei zum großen Teil selbst."
+                    },
+                    {
+                        "description": "Kümmert sich darum, dass seine Sachen in Ordnung gehalten werden.",
+                        "example": "Räumt seine \"Kunstwerke\" sowie Pinsel, Farben, Buntstifte u.ä. aus eigener Initiative ins Fach."
+                    }
+                ]
+            },
+            "phase9": {
+                "items": [
+                    {
+                        "description": "Zeigt Geschicklichkeit bei der Benutzung von Essutensilien.",
+                        "example": "Hält den Löffel in richtiger \"Daumen-aufwärts\"-Haltung beim Essen."
+                    },
+                    {
+                        "description": "Zeigt gute Koordination und ist (nahezu) unabhängig beim Ausziehen, zieht sich mit nur noch sehr wenig Hilfe aus.",
+                        "example": "Hose, Hemd, Pullover, Unterwäsche."
+                    },
+                    {
+                        "description": "Zeigt feinmotorische Koordination beim Anziehen.",
+                        "example": "Zieht Schuhe und Socken an, ohne Schuhe zuzubinden, schließt Schuhschnallen; zieht Mantel an und macht große Knöpfe auf und zu."
+                    },
+                    {
+                        "description": "Entwickelt Abneigung und Vorliebe für bestimmte Kleidungsstücke.",
+                        "example": "Besteht vielleicht auf Hosen mit Taschen oder auf Kleidungsstücken mit einer bestimmten Farbe."
+                    },
+                    {
+                        "description": "Ist stolz darauf zu wissen, wo seine persönlichen Sachen aufbewahrt werden.",
+                        "example": "Kleidungsstücke, Spielzeug, Geschenke."
+                    },
+                    {
+                        "description": "Toilettentraining: Blasentraining ist vollkommen abgeschlossen.",
+                        "example": ""
+                    }
+                ]
+            },
+            "phase10": {
+                "items": [
+                    {
+                        "description": "Versucht wie ein Erwachsener zu essen.",
+                        "example": "Zieht die Gabel dem Löffel vor bei angemessenen Speisen, versucht mit dem Messer zu schneiden und bemüht sich, nicht zu kleckern."
+                    },
+                    {
+                        "description": "Versucht sich selbst ohne Hilfe anzuziehen.",
+                        "example": "Nimmt dabei noch keine Rücksicht auf Vorder- und Rückseite, rechts und links, innen und außen."
+                    },
+                    {
+                        "description": "Versucht seine Schuhe zuzubinden.",
+                        "example": "Macht einfachen Knoten, versucht Schleifen nachzuahmen."
+                    },
+                    {
+                        "description": "Geht selbstständig zur Toilette und erledigt alles ohne Hilfe.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Macht Konversation bei Mahlzeiten, ohne sich beim Essen stören zu lassen.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Hilft gern bei der Vorbereitung für das Essen.",
+                        "example": ""
+                    }
+                ]
+            },
+            "phase11": {
+                "items": [
+                    {
+                        "description": "Stellt sich beim Essen das eigene Menü zusammen.",
+                        "example": "Entscheidet, welchen Saft es vorzieht, ob es Butter oder Marmelade will."
+                    },
+                    {
+                        "description": "Weiß Bescheid über den Gesundheitswert einiger Speisen.",
+                        "example": "Weiß, dass zuviel Süßigkeiten ungesund und schlecht für die Zähne sind; dass Vollkornbrot gesünder ist als Weißbrot, dass Obst und Gemüse gesund sind und Vitamine enthalten. Und kann einige gesunde und weniger gesunde Nahrungsmittel nennen."
+                    },
+                    {
+                        "description": "Beschäftigt sich mit Doktor-Spielen.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Ist sich verschiedener Gefahren bewusst.",
+                        "example": "Zeigt Vorsicht oder Zurückhaltung bei gefährlichen Situationen; weiß was passiert, wenn es Gift verschluckt, giftige Beeren oder Pilze isst."
+                    },
+                    {
+                        "description": "Führt Körperpflege vor dem Schlafen selbstständig und zuverlässig durch.",
+                        "example": "Putzt sich die Zähne und wäscht sich Gesicht und Hände sauber und trocknet sich ab."
+                    },
+                    {
+                        "description": "Befasst sich mit der Frage nach dem Geschlecht.",
+                        "example": "Geht gern ins Badezimmer, wenn sich andere gerade dort aufhalten, um seine Neugier zu befriedigen."
+                    }
+                ]
+            },
+            "phase12": {
+                "items": [
+                    {
+                        "description": "Zieht sich alleine richtig und vollständig an.",
+                        "example": "Zieht sich komplett in einem Durchgang von der Unterwäsche bis zur Straßenkleidung (nach dem Turnen oder Schlafen) an. Achtet dabei auf \"vorne\" und \"hinten\", \"rechts\" und \"links\". Wenn es ein Kleidungsstück verdreht hat, korrigiert es sich unaufgefordert."
+                    },
+                    {
+                        "description": "Putzt sich selbstständig die Nase, d.h. unaufgefordert und ohne Hilfe, noch bevor Sekret aus der Nase gelaufen ist.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Achtet auf seine Kleidung ohne Aufforderung.",
+                        "example": "Räumt sie regelmäßig an den für die vorgesehenen Platz, z.B. Korb oder Garderobe."
+                    },
+                    {
+                        "description": "Ist beim Frühstück oder Abendbrot vollkommen selbstständig.",
+                        "example": "Schüttet sich Cornflakes auf den Teller, gießt Milch ein, bereitet sich selbstständig Kakao, schneidet Wurst oder Käse, schmiert sein Brot und schneidet es selbst durch."
+                    },
+                    {
+                        "description": "Hält sich in verschiedenen Situationen selbstständig und unaufgefordert sauber.",
+                        "example": "Wäscht sich unaufgefordert und selbstständig die Hände nach dem Malen, Kleben, wischt sich unaufgefordert Mund und Gesicht ab, wenn verschmiert. Wäscht sich unaufgefordert die Hände vor dem Essen."
+                    },
+                    {
+                        "description": "Tobt sich manchmal bis zur Erschöpfung aus.",
+                        "example": "Ziel der Tätigkeit des Kindes ist die körperliche Erschöpfung und nicht etwa die Freude an Kompoetenz in der Durchführung oder Üben von Tätigkeiten, z.B. Rennen ohne äußeres Ziel - das Ziel ist Erschöpfung."
+                    }
+                ]
+            },
+            "Phase13": {
+                "items": [
+                    {
+                        "description": "Unterscheidet \"links\" und \"rechts\" an sich selbst sehr sicher richtig, aber noch nicht an anderen.",
+                        "example": "Hebt beim An- und Ausziehen, Waschen etc. die linke oder rechte Hand nach Aufforderung."
+                    },
+                    {
+                        "description": "Beschäftigt sich mit der Tatsache, dass jeder Mensch nur ein Geschlecht hat und möchte manchmal dem anderen Geschlecht zugehören.",
+                        "example": "Mädchen möchte ein Junge sein, Junge möchte möchte ein Baby bekommen, obwohl er weiß, dass nur Frauen Babys bekommen; fragt, warum Mädchen keinen Penis haben."
+                    },
+                    {
+                        "description": "Ist sich der Entblößung seines Körpers bewusst.",
+                        "example": "Möchte öfter im Bad allein sein, wenn es sich ausziehen will; ist vor Fremden mit dem Entblößen seines Körpers zurückhaltend."
+                    },
+                    {
+                        "description": "Wählt seine Kleidung dem Wetter und der Gelegenheit entsprechend.",
+                        "example": "Beachtet Temperatur, Regen, Feier, Festlichkeit."
+                    },
+                    {
+                        "description": "Isst mit Messer und Gabel.",
+                        "example": "Zerteilt oder schneidet sein Essen (auch Fleisch) selbst mit dem Messer."
+                    },
+                    {
+                        "description": "Bezeichnet Körperteile sehr differenziert.",
+                        "example": "Kleiner Finger, Ringfinger, Ellenbogen, Schulter, Schienbein, Wade."
+                    }
+                ]
+            }
+        },
+        "Phase14": {
+            "items": [
+                {
+                    "description": "Bindet Schleifen ohne hinzusehen selbstständig.",
+                    "example": "bindet die Schleife der Mantelkapuze oder Mütze ohne Hilfe, bindet Schürzenschleife auf dem Rücken ohne Hilfe."
+                },
+                {
+                    "description": "Führt komplizierte Tätigkeiten beim Anziehen aus.",
+                    "example": "Bindet Schnürsenkel, zieht Schnürstiefel völlig ohne Hilfe an."
+                },
+                {
+                    "description": "Identifiziert rechte und linke Hand einer anderen Person korrekt.",
+                    "example": "Auch wenn es der Person gegenübersteht, kann es richtig sagen, welches die rechte und welches die linke Hand der Person ist."
+                },
+                {
+                    "description": "Knöpft immer alle Knöpfe ohne Hilfe zu, selbst ganz kleine oder schwierig platzierte.",
+                    "example": ""
+                },
+                {
+                    "description": "Ist an der Herkunft von Babys interessiert.",
+                    "example": "Fragt, wo das Baby herkommt, und guckt sich interessiert Material an, z.B. Bücher, die sich mit der Herkunft von Babys befassen."
+                },
+                {
+                    "description": "Versorgt eine kleine Verletzung selbst.",
+                    "example": "Versorgt sich selbstständig, indem es sich ohne Hilfe ein Pflaster in der passenden Größe zurechtschneidet und aufklebt."
+                }
+            ]
+        },
+        "surroundingPerception": {
+            "name": "Umgebungsbewusstsein",
+            "phase1": {
+                "items": [
+                    {
+                        "description": "Reagiert auf Veränderungen und Unterschiede von Sinnesreizen.",
+                        "example": "Bsp: Temperaturveränderungen, Geschmacksunterschiede: süß, sauer, bitter, etc., sowie auf unterschiedliche Geräusche und Stimmen, unterbicht Saugen, wenn es eine unbekannte Stimme oder ein unbekanntes Geräusch hört."
+                    },
+                    {
+                        "description": "Fixiert sich bewegende oder glänzende Gegenstände mit den Augen.",
+                        "example": "Blickt Objekte direkt an, folgt horizontalen oder vertikalen Bewegungen."
+                    },
+                    {
+                        "description": "Schaut zwischen Gegenständen nur hin und her.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Steckt Hände und Dinge in den Mund.",
+                        "example": "Rassel, Bettzipfel."
+                    }
+                ]
+            },
+            "phase2": {
+                "items": [
+                    {
+                        "description": "Bemerkt Menschen und Gegenstände.",
+                        "example": "Unterbricht Spiel, um ein Spielzeug, das es nicht benutzt, oder Personen anzustarren, wendet sich dann wieder seiner Aktivität zu."
+                    },
+                    {
+                        "description": "Greift nach oder berührt Gegenstände.",
+                        "example": "Möbel oder andere größere Gegenstände, greift hinein in Schachteln oder Schränke."
+                    },
+                    {
+                        "description": "Folgt sich bewegenden Gegenständen.",
+                        "example": "Dreht den Kopf oder den ganzen Körper, um den Gegenstand im Blickfeld zu behalten."
+                    },
+                    {
+                        "description": "Wendet sich zu der Quelle von Geräuschen.",
+                        "example": "Läutende Glocke, laute Stimme oder Musik."
+                    },
+                    {
+                        "description": "Sieht regelmäßig wiederkehrende Ereignisse voraus.",
+                        "example": "Füttern, baden, einen Spaziergang, ins Laufgitter gesetzt werden; reagiert in Form von ungeduldiger Erwartung, mit Freude oder Abneigung."
+                    }
+                ]
+            },
+            "phase3": {
+                "items": [
+                    {
+                        "description": "Erkennt räumliche Entfernung und Beziehungen",
+                        "example": "Greift nach entfernt liegenden Gegenständen, sieht einen Gegenstand nach, wenn er verschwindet; macht deutlich, dass der Erwachsene im Weg steht, wenn dieser die Sicht zum Gegenstand teilweise versperrt, z.B. indem es sich zur Seite neigt oder durch Gesten anzeigt, dass der Erwachsene zur Seite treten soll."
+                    },
+                    {
+                        "description": "Stellt Verbindungen zwischen Gegenständen her.",
+                        "example": "Zieht an Decke oder Tuch, um einen Gegenstand, den es haben möchte, damit heranzuholen."
+                    },
+                    {
+                        "description": "Nimmt Gegenstände aus einem Behälter.",
+                        "example": "Kekse aus einer Schachtel, Bausteine aus der Kiste."
+                    },
+                    {
+                        "description": "Reagiert überrascht oder erfreut auf Versteckspiele mit Personen oder Gegenständen.",
+                        "example": "Versteckspiel mit der Hand vor dem Gesicht; Spielzeug, das aus dem Blickfeld verschwindet und wieder auftaucht."
+                    },
+                    {
+                        "description": "Imitiert Bewegungen von Gegenständen und Personen.",
+                        "example": "Schaukelnde Bewegungen, Schütteln des Kopfes, Händeklatschen, Mundbewegungen."
+                    },
+                    {
+                        "description": "Zeigt häufiges Wiedererkennen von bekannten Personen oder Gegenständen.",
+                        "example": "Reagiert erregt oder bewegt sich auf bekannte Personen zu."
+                    },
+                    {
+                        "description": "Sucht nach versteckten Gegenständen.",
+                        "example": "Nach einem Spielzeug, das aus seinem Blickfeld verschwindet."
+                    }
+                ]
+            },
+            "phase4": {
+                "items": [
+                    {
+                        "description": "Hebt Dinge vom Boden auf, um sie zu erkunden.",
+                        "example": "Schaut sie an, schüttelt sie, steckt sie im Mund, zeigt sie jemanden."
+                    },
+                    {
+                        "description": "Reagiert auf die Frage \"wo ist?\" für einige Gegenstände und Personen.",
+                        "example": "\"Wo ist der Hund?\", \"Wo ist die Puppe?\", indem es hinsieht, in die Richtung greift oder sich suchend umsieht."
+                    },
+                    {
+                        "description": "Ist vorsichtig oder ängstlich mit unbekannten Erwachsenen.",
+                        "example": "Zögert, wird stutzig oder tut, als ob der Fremde nicht anwesend ist, verbirgt sich vielleicht sogar vor fremden Personen hinter vertrauten Personen."
+                    },
+                    {
+                        "description": "Versucht Tiere oder bewegliche Gegenstände anzufassen.",
+                        "example": "Vögel, Katzen, Staubsauger, bewegliches Spielzeug."
+                    }
+                ]
+            },
+            "phase5": {
+                "items": [
+                    {
+                        "description": "Kundschaftet mit großem Interesse seine Umgebung aus.",
+                        "example": "Erforscht Löcher, Schachteln, Regale, versucht Schreibtisch oder Kommode zu öffnen; klettert, um begehrte Gegenstände zu bekommen; ist interessiert mit Sachen zu spielen, die Erwachsenen gehören."
+                    },
+                    {
+                        "description": "Erkennt Gefahren.",
+                        "example": "Zeigt Furcht und/oder besondere Vorsicht vor Tieren, heißem Herd, dampfendem Essen (heiß), auf der Treppe zu fallen."
+                    },
+                    {
+                        "description": "Unterscheidet nach der Verwendbarkeit von Dingen.",
+                        "example": "Wischt mit dem Lappen den Tisch ab; kehrt mit dem Besen, auch wenn es diese Gegenstände in seinem Spiel manchmal in anderer Weise gebraucht."
+                    },
+                    {
+                        "description": "Ahmt Aktivitäten der Erwachsenen nach.",
+                        "example": "Telefonieren (hält den Telefonhörer ans Ohr, spricht hinein); kochen (rührt mit einem Löffel im Topf, gießt aus einem Topf aus)."
+                    }
+                ]
+            },
+            "phase6": {
+                "items": [
+                    {
+                        "description": "Weiß wo im Raum Dinge aufbewahrt werden, ist interessiert sie wieder zurückzulegen.",
+                        "example": "Legt Bausteine ins Regal zurück, Malsachen in die Schublade; versucht Töpfe und Pfannen in den Schrank zurückzustellen, legt Abfall in den Mülleimer."
+                    },
+                    {
+                        "description": "Beobachtet Erwachsene sehr genau bei der Arbeit.",
+                        "example": "Steht und sieht zu, wenn ein anderes Kind trockengelegt wird, beobachtet Handwerker, beobachtet Vorbereitungen von Materialien für verschiedenste Aktivitäten."
+                    },
+                    {
+                        "description": "Imitiert Erwachsenenaktivitäten.",
+                        "example": "Gibt vor Tiere und Babys zu füttern, will Pflanzen Wasser geben."
+                    },
+                    {
+                        "description": "Sammelt Gegenstände, die es auf Spaziergängen findet.",
+                        "example": "Steine, Blätter, Stöckchen, Papier."
+                    },
+                    {
+                        "description": "Kennt Veränderungen im Wetter, z.B. Regen, Schnee, Wind.",
+                        "example": "Sieht erregt aus dem Fenster, wenn es draußen regnet oder schneit."
+                    },
+                    {
+                        "description": "Unterscheidet nach Sammelbegriffen.",
+                        "example": "Sagt \"wau-wau\", wenn es ein Tier sieht oder \"Papa\", wenn es einen Mann sieht."
+                    }
+                ]
+            },
+            "phase7": {
+                "items": [
+                    {
+                        "description": "Erkennt und/oder benennt Dinge, die es nicht täglich sieht.",
+                        "example": "Bügeleisen, Tiere, Flugzeug."
+                    },
+                    {
+                        "description": "Kennt die Bezeichnung für verschiedene Räume.",
+                        "example": "Reagiert richtig auf \"Hole deine Puppe, Topf, Kissen aus dem Bad, Schlafzimmer, Kinderzimmer, der Küche etc\"."
+                    },
+                    {
+                        "description": "Kennt und/oder bezeichnet verschiedene Orte richtig.",
+                        "example": "Postamt, Polizei, Bahnhof, Geschäfte, Zoo, Bank, Park, Schwimmbad, Spielplatz."
+                    },
+                    {
+                        "description": "Kennt Vornamen von Erwachsenen.",
+                        "example": "Eltern, Großeltern, Onkel, Tante."
+                    }
+                ]
+            },
+            "phase8": {
+                "items": [
+                    {
+                        "description": "Nennt verschiedene Berufe.",
+                        "example": "Postbote, Polizist, Busfahrer, Lehrer usw."
+                    },
+                    {
+                        "description": "Verhält sich situationsentsprechend.",
+                        "example": "Sitzt still während des Transports im Auto oder im Bus, bleibt bei Spaziergängen bei der Gruppe."
+                    },
+                    {
+                        "description": "Sagt seinen Namen und weiß, wo es wohnt.",
+                        "example": "Sagt seinen vollen Namen und möglicherweise die Stadt; häufig sagt es auf die Frage, wo es lebt, \"in einem Haus\", \"in einer Wohnung\", \"in Deutschland\"."
+                    }
+                ]
+            },
+            "phase9": {
+                "items": [
+                    {
+                        "description": "Kennt seine eigene Altersstufe und die anderer Personen.",
+                        "example": "Nennt sein eigenes Alter, wenn es gefragt wird. Drückt das Bedürfnis aus, älter zu sein, z.B. will das tun, was ältere Kinder tun."
+                    },
+                    {
+                        "description": "Erkennt Gebiete, die es nicht täglich sieht.",
+                        "example": "Ruft den Namen von Straßen aus oder nennt Gebäude "
+                    },
+                    {
+                        "description": "Setzt Erfahrungen in Beziehung zueinander.",
+                        "example": "Ereinnert sich an Plätze, Leute, Ereignisse; sagt, wenn es einen Rasen nicht betreten darf: \"Aber bei dem anderen Spielplatz darf man auf den Rasen\"."
+                    },
+                    {
+                        "description": "Drückt Ängste verbal oder durch klare Gesten aus.",
+                        "example": "Zeigt Furcht vor Gefahren (realen oder imaginären), vor Dunkelheit, vor dem Arzt, vor gespieltem Angriff, vor Tieren."
+                    },
+                    {
+                        "description": "Kennt die richtige Bezeichnung für Verwandte.",
+                        "example": "Richtige Verwandschaftsbezeichnung wie z.B. Bruder, Onkel, Tante, Oma."
+                    }
+                ]
+            },
+            "phase10": {
+                "items": [
+                    {
+                        "description": "Kennt Komplementäre Rollen wie Arzt-Patient, Käufer-Verkäufer, Polizist-Dieb.",
+                        "example": "Wenn es spielt, bittet es jemanden den Arzt zu spielen, so dass es selbst Patient sein kann; wenn ein Kind ruft: \"Ich spiel' Räuber!\" antwortet es: \"Oh, dann bin ich der Polizist\"."
+                    },
+                    {
+                        "description": "Kennt Funktionen von Altersunterschieden.",
+                        "example": "Verbindet Altersunterschiede mit verschiedenen Tätigkeiten und Erfahrungen: \"Ich bin drei Jahre alt und brauche keine Windeln mehr\", \"Sie/er ist sechs Jahre alt und geht in die Schule\"."
+                    },
+                    {
+                        "description": "Erkennt bekannte Dinge und Orte an Hinweisen oder Zeichen.",
+                        "example": "Erkennt ein bekanntes Haus an der Eingangstür, die Tankstelle an der Zapfsäule, die U-Bahn an dem blauen Schild."
+                    },
+                    {
+                        "description": "Erkennt Wege und Plätze (Orientierungssinn)",
+                        "example": "Sieht Zielorte voraus, selbst, wenn es selten da gewesen ist, sobald ein bekannter Weg eingeschlagen wird; drückt Unsicherheit aus, wenn ein unbekannter Weg eingeschlagen wird, um ein bekanntes Ziel zu erreichen; erkennt, wenn ein Umweg gemacht wird."
+                    },
+                    {
+                        "description": "Unterscheidet und benennt kurz und lang, dick und dünn.",
+                        "example": "\"Das ist eine dünne Knetschlange, die da ist dick.\", \"Diese Schlange ist ganz kurz, die andere ganz lang.\""
+                    },
+                    {
+                        "description": "Erkennt auch Umgebungsgeräusche, die es nicht täglich hört.",
+                        "example": "Glockengeläut, Müllabfuhr, Autohupe, Rasenmäher."
+                    }
+                ]
+            },
+            "phase11": {
+                "items": [
+                    {
+                        "description": "Unterscheidet Tageszeiten und verbindet sie mit Tagesabläufen.",
+                        "example": "\"Morgens frühstücken wir, abends gehe ich schlafen\"."
+                    },
+                    {
+                        "description": "Berichtet Reihenfolge täglicher Abläufe",
+                        "example": "\"Nach dem Aufstehen ziehe ich mich an, frühstücke, putze Zähne und gehe dann in den Kindergarten.\""
+                    },
+                    {
+                        "description": "Zeichnet vertraute Gegenstände seiner Umgebung.",
+                        "example": "Häuser, Autos, Tiere, Bäume."
+                    },
+                    {
+                        "description": "Verbindet Jahreszeiten mit typischen Merkmalen.",
+                        "example": "\"Im Sommer fahren wir in den Urlaub, im Herbst fallen die Blätter von den Bäumen, im Winter schneit es.\""
+                    },
+                    {
+                        "description": "Kennt Namen und Funktionen der Angestellten des Kindergartens.",
+                        "example": "Anke ist die Vorschulerzieherin, Silvia ist in der roten Gruppe; Hans ist der Hausmeister, der repariert Dinge, Hanna ist die Leiterin und Sigrid, die macht sauber."
+                    },
+                    {
+                        "description": "Unterscheidet und benennt rund und eckig.",
+                        "example": "Am Formenbrett unterscheidet es zwischen runden und eckigen Formen; benennt eckige und runde Gegenstände im Raum: \"Der Ball ist rund, die Kiste ist eckig\"."
+                    }
+                ]
+            },
+            "phase12": {
+                "items": [
+                    {
+                        "description": "Setzt die Uhrzeit mit dem Tagesablauf in Verbindung.",
+                        "example": "\"Um 12 essen wir, um 3 werde ich abgeholt, um 7 gehe ich schlafen\"."
+                    },
+                    {
+                        "description": "Zeichnet Dinge mit ihrem Inhalt.",
+                        "example": "Füllt ein Haus mit Mobiliar, ein Auto mit Fahrer, ein Flugzeug oder einen Zug mit Passagieren o.ä."
+                    },
+                    {
+                        "description": "Reagiert auf Verkehrszeichen.",
+                        "example": "Reagiert auf die Ampel und bleibt bei 'rot' ohne Aufforderung stehen, sagt z.B. \"Gleich kommt 'grün' und dann können wir gehen!\"; erkennt z.B. Radwege, Zeichen für Spielstraße, Stoppschild, Parkplatz usw."
+                    },
+                    {
+                        "description": "Verbindet gewisse Aufgaben mit Berufen.",
+                        "example": "Der Briefträger bringt die Post, der Feuerwehrmann löscht das Feuer, der Bäcker backt den Kuchen, der Arzt macht die Menschen gesund."
+                    },
+                    {
+                        "description": "Nennt mindestens drei Teile seiner Adresse.",
+                        "example": "Land, Stadt, Bezirk, Straße, Hausnummer."
+                    },
+                    {
+                        "description": "Unterscheidet Hell- und Dunke-Abstufungen von Farben. ",
+                        "example": "Hell- und Dunkelblau, -grün, -grau. \"Ich habe einen dunkelblauen Pulli, deiner ist hellblau.\""
+                    }
+                ]
+            },
+            "phase13": {
+                "items": [
+                    {
+                        "description": "Entdeckt und benennt feine Unterschiede bei ähnlichen Dingen.",
+                        "example": "Findet Unterschiede bei Suchbildern; wenn zwei Kinder fast dieselben Rücksäcke haben, vergleicht es genau und benennt den Unterschied."
+                    },
+                    {
+                        "description": "Kennt seinen Geburtstag.",
+                        "example": "Nennt sein Alter und seinen Geburtstag mit Monat und Tag."
+                    },
+                    {
+                        "description": "Benutzt Zeitbegriffe richtig.",
+                        "example": "\"Vorgestern habe ich Oma besucht.\"; \"Übermorgen gehen wir ins Theater.\"; \"In zwei Monaten habe ich Geburtstag.\""
+                    },
+                    {
+                        "description": "Benennt die Namen der Wochentage.",
+                        "example": "\"Heute ist Dienstag, nach Sonntag kommt Montag\"."
+                    },
+                    {
+                        "description": "Zeigt großes Interesse am Kalender und an der Uhr.",
+                        "example": "Kennt die Funktion eines Kalenders, steht davor und will von der Erzieherin wissen, welcher Tag heute ist oder will seinen Geburstag auf dem Kalender gezeigt haben. Erkundigt sich nach der Uhrzeit, auch wenn diese nicht mit einem bestimmten Ereignis verknüpft ist."
+                    },
+                    {
+                        "description": "Verfügt über eine gute räumliche Orientierung, die über den vertrauen Raum hinausreicht.",
+                        "example": "Wenn es gefragt wird, wo der Bäcker ist, versucht es zu beschreiben \"Gegenüber der Bushaltestelle\"; Geht auch weitere und kompliziertere Wege sicher, z.B. zum Supermarkt oder Schwimmbad, man braucht ihm nicht zu sagen wo es lang geht."
+                    }
+                ]
+            },
+            "phase14": {
+                "items": [
+                    {
+                        "description": "Üerquert Straßen sicher und selbstständig.",
+                        "example": "Kennt und beachtet die Funktion der Ampel, rennt nicht über die Straße und sieht erst nach links und rechts, bevor es die Straße überquest; achtet auf den Radweg."
+                    },
+                    {
+                        "description": "Verbindet Jahreszeiten mit Eigenschaften und möglichen Tätigkeiten.",
+                        "example": "Auf die Frage \"Was ist im Winter?\" antwortet es z.B. \"Da ist es ganz kalt und man kann rodeln.\" Im Herbst fallen die Blätter vom Baum; im Sommer gibt es frisches Obst, ich kann zum Baden gehen, usw."
+                    },
+                    {
+                        "description": "Beginnt die Uhrzeit zu lesen und erkennt schon 12 Uhr und 6 Uhr.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Seine Zeichnungen spiegeln seine Umwelt erkennbar wieder.",
+                        "example": "Gegenstände und Personen in richtiger Position und Proportion."
+                    },
+                    {
+                        "description": "Benennt die Kalendermonate.",
+                        "example": "Kann sie bei Nachfrage nennen, wenn auch nicht in richtiger Reihenfolge. Nennt es: mehr als 5 Monate = tut es, 2-4 Monate = tut es teilweise, weniger als zwei = tut es nicht."
+                    },
+                    {
+                        "description": "Nennt die Namen einiger Straßen in seiner Umgebung.",
+                        "example": "Straße, in der die Großeltern oder Freunde wohnen, Straße des Kindergartens."
+                    }
+                ]
+            }
+        },
+        "emotionalDevelopment": {
+            "name": "Emotionale Entwicklung",
+            "phase1": {
+                "items": [
+                    {
+                        "description": "Teilt seine Bedürfnisse durch Weinen oder Schrein mit.",
+                        "example": "Hunger, Schmerz, Müdigkeit, Bedürfnisse nach Kontakt und Aufmerksamkeit (z.B. aufgenommen und gestreichelt zu werden)."
+                    },
+                    {
+                        "description": "Beruhigt sich wenn es aufgenommen wird.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Reagiert auf bekannte Gesichter oder Stimmen",
+                        "example": "Blickt Personen direkt an, strampelt, zappelt mit den Armen, gurrt, dreht den Kopf, hört auf zu weinen, sucht mit den Augen, wenn es eine bekannte Stimme hört"
+                    },
+                    {
+                        "description": "Folgt Personen mit den Augen.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Reagiert auf Trennung von einer ihm vertrauten Person.",
+                        "example": "schreit, weint, greint, zieht Schippchen, wird wütend"
+                    },
+                    {
+                        "description": "Zeigt unterschiedliches Schreien.",
+                        "example": "Hunger, Schmerz, Zorn, Beschwerden und verschiedene Bedürfnisse"
+                    },
+                    {
+                        "description": "Reagiert auf Person, die sich über es beugt, um es aufzunehmen.",
+                        "example": "Lächelt, strampelt, zappelt mit den Armen, Veränderung der Atmung"
+                    },
+                    {
+                        "description": "Hat es gern, wenn mit ihm Spaß gemacht wird.",
+                        "example": "Reagiert mit Lächeln, verstärkter Körperbewegung, strampelt, zappelt mit den Armen, gibt Laute von sich"
+                    }
+                ]
+            },
+            "phase2": {
+                "items": [
+                    {
+                        "description": "Erkennt mehr als eine bekannte Person.",
+                        "example": "Lächelt, bewegt Arme und Beine, gibt Laute von sich."
+                    },
+                    {
+                        "description": "Protestiert, wenn Spielzeug, mit dem es sich beschäftigt, weggenommen wird.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Wird ruhig, wenn sich jemand nähert.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Ist freudig erregt, wenn es aufgenommen wird.",
+                        "example": "Windet sich, strampelt mit den Beinen, zappelt mit den Armen (manchmal so viel Aktivität, dass es schwierig ist, das Kind zu halten."
+                    },
+                    {
+                        "description": "Reagiert, wenn jemand es anspricht.",
+                        "example": "Unterbricht Spiel, wird ruhig, lächelt."
+                    },
+                    {
+                        "description": "Hat es gern, wenn mit ihm gespielt oder gesprochen wird.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Reagiert auf Versteckspiel hinter der Hand, hinter einem Blatt Papier oder Tuch.",
+                        "example": "Wenn sich der Erwachsene die Hand vor das Gesicht hält, macht das Kind ein erstauntes Gesicht und lacht, wenn er die Hand wegnimmt."
+                    }
+                ]
+            },
+            "phase3": {
+                "items": [
+                    {
+                        "description": "Reagiert unterschiedlich auf vertraute und weniger vertraute Personen.",
+                        "example": " Streckt die Hand nach der vertrauten Person aus, lächelt sie an, krabbelt auf sie zu; zögert, macht den Körper steif, dreht den Kopf weg, windet sich, krabbelt weg von einer fremden Person."
+                    },
+                    {
+                        "description": "Reagiert auf sein Spiegelbild.",
+                        "example": "Lächelt, krabbelt darauf zu, patscht mit den Händen dagegen."
+                    },
+                    {
+                        "description": "Reagiert auf Gefühle und Annäherung anderer Kinder.",
+                        "example": "Auf Weinen, Kontaktinitiative durch Vokalisation oder Gestik."
+                    },
+                    {
+                        "description": "Nimmt von sich aus Kontakt auf.",
+                        "example": "Streckt die Arme aus, ruft und zieht am Hemd."
+                    },
+                    {
+                        "description": "Zeigt Bindung an die Mutter oder an eine spezielle Pflegeperson.",
+                        "example": "Will aufgenommen werden, klammert sich an, will Zuwendung, weint, wenn der vertraute Erwachsene es verlässt."
+                    },
+                    {
+                        "description": "Winkt \"Auf Wiedersehen\", wenn es ermutigt wird oder wenn der Erwachsene zuerst winkt oder von selbst.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Drückt Gefühle auf verschiedene Art aus.",
+                        "example": "Lacht, zeigt Freude, wenn es die Aufmerksamkeit von jemandem bekommt; schüttelt den Kopf, wenn es das nicht mag, weg."
+                    },
+                    {
+                        "description": "Versucht seinen Besitz zu schützen.",
+                        "example": "Schimpft, hält fest, haut, beißt."
+                    }
+                ]
+            },
+            "phase4": {
+                "items": [
+                    {
+                        "description": "Folgt Anweisungen, die auch durch Gesten begleitet werden",
+                        "example": "\"Komm her\", \"leg dich hin\", \"gib mir ...\"."
+                    },
+                    {
+                        "description": "Reagiert mit unterschiedlichen Gefühlen auf positive oder negative Reaktionen von anderen.",
+                        "example": "Weint oder wird still, wenn es ausgeschimpft wird; freut sich, wenn jemand seine Bemühungen lobt."
+                    },
+                    {
+                        "description": "Mag Spaß.",
+                        "example": " Hat es gern, wenn über es gelacht wird: wenn man es hochhält und dabei lacht oder ein lustiges Spiel spielt; hat gern \"Tu-als-ob\"-Aktivitäten: wenn Betreuer mit Gesten Essen, Schlafen usw. demonstriert."
+                    },
+                    {
+                        "description": "Imitiert Geräusche und Bewegungen von Erwachsenen.",
+                        "example": "Zunge schnalzen, auf die Nase tippen, auf Gegenstände zeigen, klopfen, blasen, Kopf schütteln."
+                    },
+                    {
+                        "description": "Drückt durch Gesten aus, was es möchte.",
+                        "example": "Zeigt, was es möchte."
+                    },
+                    {
+                        "description": "Winkt spontan \"Auf Wiedersehen\", wenn jemand den Raum verlässt.",
+                        "example": ""
+                    }
+                ,
+                    {
+                        "description": "Reagiert, wenn es beim Namen gerufen wird",
+                        "example": "Dreht sich um, lächelt die Person an."
+                    },
+                    {
+                        "description": "Versucht Erwachsene dazu zu bringen, mit ihm zu spielen.",
+                        "example": " Zieht, zeigt oder bringt auffordernd Spielzeug."
+                    },
+                    {
+                        "description": "Gibt Beweis von Zuwendung.",
+                        "example": "Umarmt, streichelt Personen, Stofftiere, Puppen."
+                    }
+
+                ]
+            },
+            "phase5": {
+                "items": [
+                    {
+                        "description": "Imitiert Erwachsene.",
+                        "example": "Klatscht in die Hände, stützt die Ellenbogen auf den Tisch, wischt das Gesicht mit dem Taschentuch."
+                    },
+                    {
+                        "description": "Drückt Zuneigung, Ärger, Eifersucht klar und direkt aus.",
+                        "example": "Umarmt liebevoll, lächelt, bietet Spielzeug an; drückt Ärger durch Weinen und offene Aggression aus; wird eifersüchtig, wenn Eltern oder beliebter Betreuer einem anderen Kind Aufmerksamkeit schenken."
+                    },
+                    {
+                        "description": "Begrüßt bekannte Personen.",
+                        "example": "Nähert sich ihnen mit offenen Armen, sagt \"Mama\" oder den Namen der Person."
+                    },
+                    {
+                        "description": "Drückt Mitleid und andere Gefühle für andere Kinder aus.",
+                        "example": "Umarmt, schaut betroffen und besorgt, wenn ein anderes Kind weint; versucht zu helfen, bringt weinendem Kind ein Spielzeug."
+                    },
+                    {
+                        "description": "Gehorcht schwierigeren Aufforderungen.",
+                        "example": "\"Bring mir das\", \"schmeiß das weg\", \"warte\", \"zeig deinen...\" (jeden Teil des Körpers)."
+                    },
+                    {
+                        "description": "Sagt, was es möchte, drückt seine Bedürfnisse sprachlich aus.",
+                        "example": "\"Keks\", \"mehr\", \"bitte\"."
+                    },
+                    {
+                        "description": "Zeigt Zeichen von Selbstbild.",
+                        "example": "Reagiert auf seinen Namen, zeigt auf Teile seines Körpers und seiner Kleidung."
+                    }
+                ]
+            },
+            "phase6": {
+                "items": [
+                    {
+                        "description": "Spielt mit anderen Kindern für kurze Zeit.",
+                        "example": "Wenn es Spielsachen hat und ein zweites Kind es beobachtet und sich zu ihm hinsetzt, wird das Kind vielleicht zuerst die Sachen vor sich aufhäufen, aber einen Augenblick später dem hinzugekommenen Kind ein Spielzeug von sich abgeben."
+                    },
+                    {
+                        "description": "Teilt im Spiel Material und Spielzeug mit anderen Kindern.",
+                        "example": "Kind dreht sich zu einem Kind um und sagt \"hier\", während es dem Kind ein Spielzeug hinhält, handelt spontan (wenn es nicht spontan handelt, dann auswerten: teilweise)."
+                    },
+                    {
+                        "description": "Bezieht sich spontan auf seinen eigenen Namen und Namen anderer Kinder.",
+                        "example": " Dreht sich um, wenn es seinen Namen hört; schaut Gleichaltrige an, wenn der Erzieher den Namen des anderen Kindes nennt; kennt Namen von 3 oder 4 anderen Kindern, wendet die Namen richtig auf die Kinder an."
+                    },
+                    {
+                        "description": "Benutzt besitzanzeigende Fürwörter für Personen und Dinge.",
+                        "example": "\"mein\", \"dein\"."
+                    },
+                    {
+                        "description": "Zeigt Vorliebe für ein bestimmtes Spielzeug.",
+                        "example": " Bevorzugt ein bestimmtes Spielzeug und versucht sehr oft mit diesem zu spielen; geht häufig direkt darauf zu, wenn es in den Raum kommt."
+                    },
+                    {
+                        "description": "Drückt Urteile über 'fair' und 'unfair' aus.",
+                        "example": "Sagt \"auch nicht schlafen\", \"auch rausgehen\", \"ich auch\".\n\n"
+                    },
+                    {
+                        "description": "Deutliche Anzeichen für Kooperation und Konkurrenz.",
+                        "example": "Hält die Hände im Kreis beim Kreisspielen, hilft beim Anziehen, indem es kooperative Bewegungen macht; versucht ein anderes Kind zu schaukeln; wenn ein anderes Kind ein Spielzeug bekommt oder einen Keks, sagt das Kind \"ich will es\", \"gib mir\" oder es hört mit der Tätigkeit auf, mit der es gerade beschäftigt war, und versucht den Gegenstand zu bekommen."
+                    },
+                    {
+                        "description": "Reagiert auf spezifische Einschränkungen.",
+                        "example": "Greift ein anderes Kind an, weil dieses ihm Essen oder Spielzeug weggenommen hat; erlaubt anderen Kind nicht, in seine Aktivitäten einzubrechen."
+                    },
+                    {
+                        "description": "Kennt einfache Regeln beim Essen, bei Tisch.",
+                        "example": "Benutzt einen Löffel, wischt Gesicht mit dem Lätzchen, steckt Lätzchen unters Kinn, wischt auf, wenn es gekleckert hat."
+                    },
+                    {
+                        "description": "Hilft beim Zusammenpacken der Spielsachen.",
+                        "example": "Legt Bausteine in die Schachtel, schiebt den Stuhl unter den Tisch zurück, räumt Sachen weg, wenn es vom Erwachsenen dazu aufgefordert wird."
+                    },
+                    {
+                        "description": "Hat einen eigenen Willen in Beziehung zu Erwachsenen.",
+                        "example": "Sagt manchmal \"nein\" oder vermittelt durch Gesten seine Ablehnung auf eine selbstbehauptende Art, wenn der Erwachsene das Kind auffordert, etwas zu tun.\n\n"
+                    }
+                ]
+            },
+            "phase7": {
+                "items": [
+                    {
+                        "description": "Versucht seinen Willen durchzusetzen, wenn es mit anderen Kindern spielt.",
+                        "example": "Sagt \"Ich will es tun\", \"gib es mir\", oder setzt gesteuertes Verhalten ein, um sein Ziel zu erreichen, ohne sich leicht ablenken zu lassen."
+                    },
+                    {
+                        "description": "Reagiert mit Stolz auf Lob.",
+                        "example": " Lächelt, wenn es gelobt wird; zeigt einem anderen Erwachsenen ein \"Kunstwerk\", für das es gelobt werden will."
+                    },
+                    {
+                        "description": "Bennent sich selbst mit \"ich\".",
+                        "example": " \"Ich will gehen\", \"ich habe es\", \"ich brauche es\"."
+                    },
+                    {
+                        "description": "Zeigt Verständnis für gut und schlecht.",
+                        "example": "Gibt bewertende Kommentare von sich über das schlechte Benehmen anderer: \"Hans ist böse\", \"au weia, gekleckert\", \"au weia, kaputt gemacht\"."
+                    },
+                    {
+                        "description": "Macht ästhetische Kommentare.",
+                        "example": "\"Das ist hübsch, schön, nicht schön, furchtbar, das stinkt\"; \"Deine Haare sind schön\"."
+                    },
+                    {
+                        "description": "Entwickelt eine Vertrauensbeziehung zu mehr als einem Erwachsenen.",
+                        "example": "Wendet sich, wenn es sich wehgetan hat, genauso bereitwillig an den Erzieher wie an die Mutter, wenn diese nicht anwesend ist; verlässt bereitwillig mit einem zweiten Erzieher den Raum für einen besonderen Auftrag; vertraut bekannten Erwachsenen Bedürfnisse und Sorgen an: \"Ich habe mich in den Finger geschnitten\", \"ich mag keine Ungeheuer\", \"ich habe Angst\", \"ich habe meine Hose nassgemacht\"."
+                    }
+                ]
+            },
+            "phase8": {
+                "items": [
+                    {
+                        "description": "Schränkt eigene Bedürfnisse zugunsten anderer Kinder ein oder verändert sie.",
+                        "example": "Wechselt sich bei bestimmten Aktivitäten mit anderen Kindern ab, teilt Spielzeug mit anderen Kindern, akzeptiert Regelspiele."
+                    },
+                    {
+                        "description": "Hilft anderen Kindern und spielt kooperativ.",
+                        "example": "Hilft Turm zu bauen, Gegenstand oder anderes Kind im Wagen zu schieben oder zu ziehen."
+                    },
+                    {
+                        "description": "Spielt gleichzeitig mit ein oder zwei Kindern.",
+                        "example": "In der Puppenecke, bei Tischaktivitäten (Puzzle, Steckbrettspiele), im Sandkasten."
+                    },
+                    {
+                        "description": "Zeigt Sympathie sowie Vorliebe und Abneigung für Personen.",
+                        "example": "Tröstet oder verteidigt bestimmte Kinder, streichelt den Rücken des weinenden Freundes, bietet Spielzeug an, sagt \"mein Freund Stefan\", zieht bestimmte Kinder für gemeinsames Spiel vor und lehnt ein Kind oder mehr Kinder ab."
+                    },
+                    {
+                        "description": "Zeigt Höflichkeit, Takt und Rücksichtnahme anderen gegenüber.",
+                        "example": " Zeigt Betroffenheit, wenn es jemand wehgetan hat; sagt \"danke\", nimmt Rücksicht auf Schlafende."
+                    },
+                    {
+                        "description": "Zeigt herzliche Gefühle kleineren Kindern und Tieren gegenüber.",
+                        "example": "Umarmt, streichelt."
+                    },
+                    {
+                        "description": "Hat eigene Selbstkontrollen.",
+                        "example": "Bemüht sich offene Aggressionen zu unterdrücken, unterbricht unerwünschtes Verhalten, wenn es einen Erwachsenen sieht."
+                    }
+                ]
+            },
+            "phase9": {
+                "items": [
+                    {
+                        "description": "Wählt zwischen Gleichaltrigen.",
+                        "example": " Hat einen oder einige Lieblingsfreunde."
+                    },
+                    {
+                        "description": "Drückt Verlegenheit aus.",
+                        "example": "Erscheint befangen, wenn es geneckt wird oder wenn es ertappt wird; flüstert Erwachsenen Bitten und Fragen zu, wenn ein fremder Erwachsene dabei ist."
+                    },
+                    {
+                        "description": "Vergleicht eigene Leistungen und Besitz mit anderen.",
+                        "example": "Vergleicht eigenes Bauklotzgebäude, Zeichnungen, Naschereien und Spielzeuge mit denen anderer Kinder."
+                    },
+                    {
+                        "description": "Spielt mit einer Gruppe von Kindern über längere Zeit.",
+                        "example": "Spielt mit zwei oder mehr Kindern zusammen ohne Unterbrechung über einen längeren Zeitraum."
+                    },
+                    {
+                        "description": "Genießt es anderen eine Freude zu machen.",
+                        "example": "Indem es Aufträge ausführt, Grenzen akzeptiert, der Erzieherin oder anderen Kindern hilft, Geschenke macht, wie z.B. eigene Gemälde oder Basteleien oder Süßigkeiten teilt."
+                    },
+                    {
+                        "description": "Schiebt Bedürfnisbefriedigung auf.",
+                        "example": "Setzt manchmal im Spiel eine Runde aus oder lässt ein anderes Kind drankommen, ohne gereizt zu sein."
+                    }
+                ]
+            },
+            "phase10": {
+                "items": [
+                    {
+                        "description": "Plant und baut zusammen mit mehreren Kindern Rollen- und Fantasiespiele auf.",
+                        "example": "\"Lasst uns Bahnhof/Tankstelle (u.ä.) spielen\" oder \"Wir sind alle Ungeheuer\"."
+                    },
+                    {
+                        "description": "Zeigt Sinn für Humor.",
+                        "example": "Akzeptiert Scherz als Scherz, spielt gern Trickspiele mit Erwachsenen (sagt Erwachsenen, wie er reagieren soll)."
+                    },
+                    {
+                        "description": "Kontrolliert negative Gefühle.",
+                        "example": "Hebt Arm um zu hauen, aber hält inne; macht brummende Geräusche, ohne aggressiv zu werden; macht Wurfgesten."
+                    },
+                    {
+                        "description": "Beteiligt sich an Regelspielen mit mehreren Kindern.",
+                        "example": "Nimmt an Kreisspielen teil, hält einfache Regeln ein, beginnt sich für einfache Wettspiele zu interessieren, spielt Bilderlotto."
+                    },
+                    {
+                        "description": "Drückt spontan Gefühle verbal aus.",
+                        "example": "Sagt: \"Ich habe Angst\", \"ich bin müde\", \"ich freue mich\", \"ich habe Dich lieb\" usw."
+                    },
+                    {
+                        "description": "Hängt sehr an Dingen, die es im Kindergarten produziert hat.",
+                        "example": "Basteleien, Zeichnungen oder Konstruktionen haben große Bedeutung für das Kind; es zeigt sie anderen stolz, möchte, dass sie aufgehängt werden und möchte sie unbedingt mit nach Hause nehmen. Es isoliert auf eine Baukonstruktion, möchte, dass sie über Nacht stehen bleiben kann, usw."
+                    }
+                ]
+            },
+            "phase11": {
+                "items": [
+                    {
+                        "description": "Versucht Autoritäten einzusetzen, um einer ihm unangenehmen Situation zu entgehen.",
+                        "example": "Sagt \"Meine Mutter hat aber gesagt, ich darf das nicht tun!\", um eine Forderung nicht erfüllen zu müssen. Oder wenn es kritisiert wird, sagt es: \"Meine Mama erlaubt mir das aber!\""
+                    },
+                    {
+                        "description": "Spielt eine halbe Stunde lang für sich allein von der Mutter oder Erzieherin getrennt.",
+                        "example": "Auf dem Spielplatz, hinter dem Haus oder in einem anderen Zimmer."
+                    },
+                    {
+                        "description": "Bewertet dargestellte Handlungen moralisch.",
+                        "example": "Gibt bei der Betrachtung von Bildern mit 'lieben' oder 'bösen' Figuren richtige Werturteile ab."
+                    },
+                    {
+                        "description": "Drückt sein Bedauern aus, wenn es einem anderen Kind körperlich weh getan hat.",
+                        "example": " Mimisch, verbal, weinen, trösten, Geschenk anbieten."
+                    },
+                    {
+                        "description": "Unterscheidet bei den eigenen Handlungen zwischen absichtlichen und unabsichtlichen.",
+                        "example": "Sagt: \"Ich wollte es nicht kaputtmachen\"."
+                    },
+                    {
+                        "description": "Imaginiert Spielkameraden.",
+                        "example": "Hält Gespräche mit einem unsichtbaren Freund und teilt starke Gefühle mit ihm, behandelt einen Teddybär o.ä. wie einen echten Spielkameraden und spricht zu ihm wie zu einem Gefährten."
+                    }
+                ]
+            },
+            "phase12": {
+                "items": [
+                    {
+                        "description": "Tauscht und teilt Spielsachen mit anderen Kindern; findet auf dem Weg der Diskussion eine Lösung für die Verteilung von Material.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Schließt sich gern mit anderen Kindern in kleinen Gruppen (3 bis 4 Kinder) zusammen.",
+                        "example": ""
+                    },
+                    {
+                        "description": "Zieht aus Misserfolgen bestimmte Konsequenzen für zukünftiges Handeln.",
+                        "example": " Wenn z.B. beim Bau einer Höhle ständig auf der einen Seite die Wand einstürzt ist, während es die zweite Wand einbaut, zieht es Konsequenzen, indem es zu zweit baut; jemanden um Hilfe bittet, der stützt; anderes Material wählt; Höhle an der Wand anlehnt u.v.a. Oder wenn es am Tag zuvor die Treppe heruntergefallen ist, geht es jetzt vorsichtig und konzentriert herunter."
+                    },
+                    {
+                        "description": "Akzeptiert sachliche Kritik.",
+                        "example": "Akzeptiert Vorschläge zu alternativen Vorgehensweisen und Fragen über sein Verhalten. \"Wenn Du den Stift anspitzt, ist es leichter genau auszumalen.\""
+                    },
+                    {
+                        "description": "Versucht Eigenverantwortung zu übernehmen.",
+                        "example": "Setzt sich selbst Ziele, sieht Schwierigkeiten teilweise voraus, überfordert sich manchmal."
+                    },
+                    {
+                        "description": "Identifiziert sich mit anderen Personen und ahmt ihre Mimik, Gestik und Sprache nach.",
+                        "example": " Ahmt Gesichtsausdruck und Gesten Erwachsener nach, benutzt Teile der Konversation Erwachsener und ihrer Ausdrucksformen.\n\n"
+                    }
+                ]
+            },
+            "phase13": {
+                "items": [
+                    {
+                        "description": "Drückt Selbstkritik aus.",
+                        "example": "Sagt: \"Ich habe ein Haus gemalt, aber das Dach ist schief geworden.\" Beim Austeilen von Tellern oder Süßigkeiten oder beim Einkaufsspielen: \"Oh, ich hab’ mich verzählt, jetzt ist eines zu wenig da.\""
+                    },
+                    {
+                        "description": "Organisiert Gruppenspiele und arrangiert sich mit anderen Kindern.",
+                        "example": "Diskutiert eher mit anderen Kindern über die Reihenfolge, macht Spielvorschläge und akzeptiert Vorschläge und Änderungen anderer Kinder."
+                    },
+                    {
+                        "description": "Unterscheidet zwischen Absicht und Versehen beim Verhalten anderer Kinder.",
+                        "example": "Wenn ein Kind aus Versehen über ein Bauwerk stolpert, sagt es: \"Das hat er doch nicht mit Absicht gemacht!\" oder wenn jemand über sein Bauwerk stolpert: \"Pass’ doch besser auf nächstes Mal.\" oder in einer anderen Situation: \"Du hast ihn geschubst. Du hast ihm mit Absicht weh getan!\""
+                    },
+                    {
+                        "description": "Verbalisert mögliche Konsequenzen seiner Handlung im Voraus.",
+                        "example": "\"Wenn ich das Mama schenke, wird Papa traurig sein, weil er nichts kriegt.\" Oder: \"Wenn wir sie nicht mitspielen lassen, wird sie ganz allein sein.\" Oder: \"Wenn wir zu laut sind, wecken wir die Schlafkinder auf.\""
+                    },
+                    {
+                        "description": "Verbalisert soziale Konfliktlösungen.",
+                        "example": "Wenn es darum geht, wer jetzt die Schaukel oder das Puppenhaus haben darf, schlägt es vor: \"Du kannst es vor dem Mittagessen haben, ich aber dann danach.\" Oder: \"Lass uns doch zusammenspielen.\""
+                    },
+                    {
+                        "description": "Erkundigt sich spontan nach dem Befinden der Erzieherin.",
+                        "example": "Wenn die Erzieherin am Vortag krank war, fragt es: \"Bist du jetzt wieder ganz gesund?\" oder wenn die Erzieherin am Vormittag sagte, sie habe Kopfschmerzen, fragt es im Laufe des Tages, ob die Erzieherin sich jetzt besser fühle, z.B. \"Hast du noch Kopfschmerzen?\""
+                    }
+                ]
+            },
+            "phase14": {
+                "items": [
+                    {
+                        "description": "Stellt Fragen über den Tod und spricht über dieses Thema ohne Anlass in der Familie.",
+                        "example": "Fürchtet, geliebte Menschen könnten sterben, fragt, wohin Tote gehen, ob sie mal zurückkommen, warum Menschen sterben, etc."
+                    },
+                    {
+                        "description": "Beschäftigt sich mit seiner eigenen Identität.",
+                        "example": " Stellt Fragen z.B. über Nationalität, Religion o.ä."
+                    },
+                    {
+                        "description": "Interessiert sich für die Kindheit von Erwachsenen.",
+                        "example": "Fragt Erwachsene nach Vorlieben oder Ereignissen aus ihrer Kindheit: „Als du klein warst, hast du da auch ein Dreirad gehabt“ oder „Warst du da auch im Kindergarten?“, „Wer war deine beste Freundin?“"
+                    },
+                    {
+                        "description": "Kann verschiedenen Situationen und Ereignissen Gefühle zuordnen.",
+                        "example": "Wenn man ganz alleine ist, dann fühlt man sich einsam; wenn es dunkel ist, fürchtet man sich; wenn einem etwas nicht gelungen, dann ärgert man sich oder ist traurig."
+                    },
+                    {
+                        "description": "Hat Distanz zu sich selbst.",
+                        "example": "Kann über eigene Missgeschicke lachen, z.B. wenn es stolpert oder sich verplappert, in Gedanken versunken einen falschen Gegenstand greift oder aus einer leeren Tasse trinken will."
+                    },
+                    {
+                        "description": "Redet über Moral und Gerechtigkeit.",
+                        "example": "Denkt laut über moralische Fragen nach: sagt: „Wenn jemand etwas mit Absicht kaputt macht, dann ist das gemein; wenn jemand aber aus Versehen etwas kaputt macht, dann ist es nicht gemein.“ Oder „Wenn man im Supermarkt ein Brot klaut, dann ist das böse, wenn jemand 10 Bonbons klaut, dann ist das noch schlimmer.“"
+                    }
+                ]
+            }
+        }
+    }
+}
