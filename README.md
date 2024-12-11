@@ -6,9 +6,24 @@ Entwicklungsstand bei Kindern erfassen
 ### Verwendete Sprachen und Frameworks
 - Python
   - Flask
+  - WTForms
   - SQLAlchemy
-- HTML, CSS, Javascript
+- HTML, CSS, Javascript (Jinja2)
   - Bootstrap
 
-### Ressourcen
-- Entwicklungstabelle nach Kuno Beller: (ree)
+
+### Aktueller Stand der Entwicklung
+
+#### Kira
+- [x] Datenbankmodell erstellt
+- [ ] Backend-Logik implementiert (60%)
+- [ ] Eingabeformulare erstellt (80%)
+
+#### Anastasiia
+- [ ] Frontend-Design erstellt (0%)
+
+#### Lavinia
+- [ ] Frontend-Design erstellt (0%)
+
+#### Florian
+- [ ] ????
