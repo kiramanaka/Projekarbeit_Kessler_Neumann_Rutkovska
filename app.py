@@ -5,13 +5,13 @@ from flask_wtf import CSRFProtect
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from forms import EditPasswordForm, EditPermissionsForm, EditGroupForm, LoginForm, RegisterForm
-from models import Group, User, db
+from models import Child, Group, User, db
 
 """
 Initialization of the Flask app, the database, the CSRF protection, the login manager and the user loader.
 """
 app = Flask(__name__)
-app.config['SECRET KEY'] = 'dasisteintotalsichererschlüssel'
+app.config['SECRET_KEY'] = 'dasisteintotalsichererschlüssel'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db.init_app(app)
 Bootstrap(app)
@@ -72,7 +72,7 @@ def groups():
 @login_required
 def view_group(group_id):
     group = Group.query.filter_by(group_id=group_id).first_or_404()
-    return render_template('view_group.html')
+    return render_template('view_group.html', group=group)
 
 
 @app.route(rule='/groups/edit/<int:group_id>', methods=['GET', 'POST'])
@@ -98,6 +98,7 @@ def new_group():
 @app.route(rule='/children/view/<int:child_id>', methods=['GET', 'POST'])
 @login_required
 def view_child(child_id):
+    child = Child.query.filter_by(child_id=child_id).first_or_404()
     return render_template('view_child.html')
 
 
@@ -196,5 +197,7 @@ def change_permissions(userid):
 
 
 # TODO Remove db.create_all() after the first run
-db.create_all()
-app.run(debug=True)
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
