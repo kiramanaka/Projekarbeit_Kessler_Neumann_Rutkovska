@@ -29,12 +29,8 @@
             <div class="d-flex">
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == url_for('new_incident') %}active{% endif %}" href="{{ url_for('new_incident') }}">Startseite</a>
+                    <a class="nav-link {% if request.path == url_for('groups') %}active{% endif %}" href="{{ url_for('groups') }}">Gruppen</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == url_for('incidents') %}active{% endif %}" href="{{ url_for('incidents') }}">Einsatzliste</a>
-                </li>
-
                 {% if current_user.permission_level >= 1 %}
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == url_for('change_password', userid=current_user.userid) %}active{% endif %}" href="{{ url_for('change_password', userid=current_user.userid) }}">Passwort ändern</a>

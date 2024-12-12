@@ -4,7 +4,7 @@ from flask_login import LoginManager, current_user, login_required, login_user, 
 from flask_wtf import CSRFProtect
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from forms import EditPasswordForm, EditPermissionsForm, EditGroupForm, LoginForm, RegisterForm
+from forms import ChildForm, GroupForm, EditPasswordForm, EditPermissionsForm, LoginForm, RegisterForm
 from models import Child, Group, User, db
 
 """
@@ -22,8 +22,8 @@ login_manager.login_view = 'login'
 
 
 @login_manager.user_loader
-def load_user(userid):
-    db.session.get(User, userid)
+def load_user(id):
+    return db.session.get(User, id)
 
 
 @app.route(rule='/login', methods=['GET', 'POST'])
@@ -78,20 +78,30 @@ def view_group(group_id):
 @app.route(rule='/groups/edit/<int:group_id>', methods=['GET', 'POST'])
 @login_required
 def edit_group(group_id):
-    form = EditGroupForm()
+    group = Group.query.filter_by(group_id=group_id).first_or_404()
+    form = GroupForm(obj=group)
     if form.validate_on_submit():
-        group = Group.query.filter_by(group_id=group_id).first_or_404()
         group.group_name = form.group_name.data
         group.children = form.children.data
         db.session.commit()
         flash('Gruppe erfolgreich geändert', 'success')
         return redirect(url_for('groups'))
-    return render_template('edit_group.html')
+    return render_template('edit_group.html', form=form)
 
 
 @app.route(rule='/groups/new', methods=['GET', 'POST'])
 @login_required
 def new_group():
+    form = GroupForm()
+    if form.validate_on_submit():
+        group = Group(
+            group_name=form.group_name.data,
+            children=form.children.data
+        )
+        db.session.add(group)
+        db.session.commit()
+        flash('Gruppe erfolgreich angelegt', 'success')
+        return redirect(url_for('groups'))
     return render_template('new_group.html')
 
 
@@ -99,21 +109,45 @@ def new_group():
 @login_required
 def view_child(child_id):
     child = Child.query.filter_by(child_id=child_id).first_or_404()
-    return render_template('view_child.html')
+    return render_template('view_child.html', child=child)
 
 
 @app.route(rule='/children/edit/<int:child_id>', methods=['GET', 'POST'])
 @login_required
 def edit_child(child_id):
-    return render_template('edit_child.html')
+    child = Child.query.filter_by(child_id=child_id).first_or_404()
+    form = ChildForm(obj=child)
+    if form.validate_on_submit():
+        child.given_name = form.given_name.data
+        child.surname = form.surname.data
+        child.birth_date = form.birth_date.data
+        child.gender = form.gender.data
+        child.supervisor = form.supervisor.data
+        db.session.commit()
+        flash('Kind erfolgreich geändert', 'success')
+        return redirect(url_for('groups'))
+    return render_template('edit_child.html', form=form)
 
 
 @app.route(rule='/children/new', methods=['GET', 'POST'])
 @login_required
 def new_child():
+    form = ChildForm()
+    if form.validate_on_submit():
+        child = Child(
+            given_name=form.given_name.data,
+            surname=form.surname.data,
+            birth_date=form.birth_date.data,
+            gender=form.gender.data,
+            supervisor=form.supervisor.data
+        )
+        db.session.add(child)
+        db.session.commit()
+        flash('Kind erfolgreich angelegt', 'success')
+        return redirect(url_for('groups'))
     return render_template('new_child.html')
 
-
+# TODO Implement Observation handling
 @app.route(rule='/observations/view/<int:observation_id>')
 @login_required
 def view_observations(observation_id):

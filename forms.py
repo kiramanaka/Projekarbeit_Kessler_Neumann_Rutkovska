@@ -6,6 +6,7 @@ from flask import current_app
 
 from models import Child, User
 
+
 class LoginForm(FlaskForm):
     username = StringField('Benutzername', validators=[DataRequired()])
     password = PasswordField('Passwort', validators=[DataRequired()])
@@ -38,19 +39,18 @@ class EditPermissionsForm(FlaskForm):
     submit = SubmitField('Speichern')
 
 
-class EditGroupForm(FlaskForm):
-    # children = Child.query.sort_by(Child.given_name).all()
+class GroupForm(FlaskForm):
     group_name = StringField('Gruppenname', validators=[DataRequired()])
-    # children = SelectMultipleField('Kinder', choices=children.surname.given_name)
+    children = SelectMultipleField('Kinder')
+
+    def __init__(self, *args, **kwargs):
+        super(GroupForm, self).__init__(*args, **kwargs)
+        with current_app.app_context():
+            kinder = Child.query.order_by(Child.surname).all()
+            self.children.choices = [(k.id, f"{k.surname} {k.given_name}") for k in kinder]
 
 
-class NewGroupForm(FlaskForm):
-    # children = Child.query.sort_by(Child.given_name).all()
-    group_name = StringField('Gruppenname', validators=[DataRequired()])
-    # children = SelectMultipleField('Kinder', choices=children.surname.given_name)
-
-
-class EditChildForm(FlaskForm):
+class ChildForm(FlaskForm):
     given_name = StringField('Vorname', validators=[DataRequired()])
     surname = StringField('Nachname', validators=[DataRequired()])
     birth_date = DateField('Geburtsdatum', validators=[DataRequired()])
@@ -65,20 +65,5 @@ class EditChildForm(FlaskForm):
             self.supervisor.choices = [(b.id, f"{b.surname} {b.given_name}") for b in betreuer]
 
 
-class NewChildForm(FlaskForm):
-    given_name = StringField('Vorname', validators=[DataRequired()])
-    surname = StringField('Nachname', validators=[DataRequired()])
-    birth_date = DateField('Geburtsdatum', validators=[DataRequired()])
-
-    def __init__(self, *args, **kwargs):
-        super(NewChildForm, self).__init__(*args, **kwargs)
-        with current_app.app_context():
-            betreuer = User.query.order_by(User.surname).all()
-            self.supervisor.choices = [(b.id, f"{b.surname} {b.given_name}") for b in betreuer]
-
-class EditObservation(FlaskForm):
-    pass
-
-
-class NewObservation(FlaskForm):
+class ObservationForm(FlaskForm):
     pass

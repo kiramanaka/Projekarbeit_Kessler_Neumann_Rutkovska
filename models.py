@@ -9,17 +9,14 @@ class User(UserMixin, db.Model):
     """
     User model for the database.
     """
-    userid = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), nullable=False)
     password_hash = db.Column(db.String(80), nullable=False)
     given_name = db.Column(db.String(80))
     surname = db.Column(db.String(80))
     permission_level = db.Column(db.Integer, default=0)
 
-    responsible_for = db.relationship('Child', backref='supervisor_id', lazy=True)
-
-    def get_id(self):
-        return self.userid
+    responsible_for = db.relationship('Child', backref='supervisor', lazy=True)
 
 
 class Group(db.Model):
@@ -40,8 +37,8 @@ class Child(db.Model):
     surname = db.Column(db.String(80), nullable=False)
     birth_date = db.Column(db.Integer, nullable=False)
     gender = db.Column(db.String(1), nullable=False)
-    supervisor_id = db.Column(db.Integer, db.ForeignKey('user.userid'), nullable=False)
-    group_id = db.Column(db.Integer, db.ForeignKey('group.group_id'), nullable=False)
+    supervisor_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    group = db.Column(db.Integer, db.ForeignKey('group.group_id'), nullable=False)
     observations = db.relationship('Observations', backref='child_id', lazy=True)
 
 
@@ -50,7 +47,7 @@ class Observations(db.Model):
     Observations model for the database.
     """
     observation_id = db.Column(db.Integer, primary_key=True)
-    child_id = db.Column(db.Integer, db.ForeignKey('child.child_id'), nullable=False)
+    child = db.Column(db.Integer, db.ForeignKey('child.child_id'), nullable=False)
     observation_date = db.Column(db.Integer, nullable=False)
     observation_data = db.Column(db.JSON, nullable=False)
     is_finished = db.Column(db.Boolean, default=False)
