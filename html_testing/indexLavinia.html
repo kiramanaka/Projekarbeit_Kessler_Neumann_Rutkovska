@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitagruppen</title>
+    <style>
+        .gruppe {
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .gruppe span {
+            margin-left: 10px;
+            transition: transform 0.2s;
+        }
+        .gruppe span.rotated {
+            transform: rotate(90deg);
+        }
+        .kinder {
+            display: none;
+            margin-left: 20px;
+        }
+
+
+		.button {
+		  background-color: #04AA6D; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+
+		.button2 {background-color: #008CBA;} /* Blue */
+    </style>
+</head>
+<body>
+
+<h1>Kitagruppen</h1>
+
+
+<button class="button">Kind hinzufügen</button>
+<button class="button button2">Neue Gruppe erstellen</button>
+
+
+<div>
+    <div class="gruppe" onclick="toggleKinder('gruppe1', this)">
+        Kitagruppe 1<span>&#9654;</span>
+    </div>
+    <div id="gruppe1" class="kinder">
+        <div>Peter</div>
+        <div>Julia</div>
+        <div>Max</div>
+    </div>
+
+    <div class="gruppe" onclick="toggleKinder('gruppe2', this)">
+        Kitagruppe 2<span>&#9654;</span>
+    </div>
+    <div id="gruppe2" class="kinder">
+        <div>Anna</div>
+        <div>Ben</div>
+        <div>Clara</div>
+    </div>
+
+    <div class="gruppe" onclick="toggleKinder('gruppe3', this)">
+        Kitagruppe 3<span>&#9654;</span>
+    </div>
+    <div id="gruppe3" class="kinder">
+        <div>Leon</div>
+        <div>Sophia</div>
+        <div>Lukas</div>
+    </div>
+</div>
+
+<script>
+    function toggleKinder(id, element) {
+        // Alle anderen Gruppen einklappen
+        const allKinder = document.querySelectorAll('.kinder');
+        const allArrows = document.querySelectorAll('.gruppe span');
+
+        allKinder.forEach((kinder) => {
+            if (kinder.id !== id) {
+                kinder.style.display = "none";
+            }
+        });
+
+        allArrows.forEach((arrow) => {
+            if (arrow !== element.querySelector('span')) {
+                arrow.classList.remove('rotated');
+            }
+        });
+
+        // Aktuelle Gruppe umschalten
+        const kinder = document.getElementById(id);
+        const arrow = element.querySelector('span');
+        if (kinder.style.display === "none" || kinder.style.display === "") {
+            kinder.style.display = "block";
+            arrow.classList.add('rotated');
+        } else {
+            kinder.style.display = "none";
+            arrow.classList.remove('rotated');
+        }
+    }
+</script>
+
+</body>
+</html>

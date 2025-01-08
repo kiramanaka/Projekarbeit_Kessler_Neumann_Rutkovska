@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Kitagruppen - Übersicht{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Kitagruppen</h1>
+        <div>
+            <button class="btn btn-secondary me-2">Gruppen bearbeiten</button>
+            <button class="btn btn-primary">Kind hinzufügen</button>
+        </div>
+    </div>
+
+    <div class="accordion" id="kitagruppenAccordion">
+        <!-- Kitagruppe 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="gruppe1Header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gruppe1" aria-expanded="true" aria-controls="gruppe1">
+                    Kitagruppe 1
+                </button>
+            </h2>
+            <div id="gruppe1" class="accordion-collapse collapse show" aria-labelledby="gruppe1Header" data-bs-parent="#kitagruppenAccordion">
+                <div class="accordion-body">
+                    <!-- Dynamische Liste von Kindern -->
+                    {% for child in gruppe1_children %}
+                    <div class="hstack gap-3 align-items-start mb-3">
+                        <div class="p-2">
+                            <strong>{{ child.vorname }} {{ child.nachname }}</strong>
+                        </div>
+                        <div class="p-2">Alter: {{ child.alter }} Jahre</div>
+                        <div class="p-2">Geschlecht: {{ child.geschlecht }}</div>
+                        <div class="p-2">Letzter Eintrag: {{ child.letzter_eintrag|date:"d.m.Y" }}</div>
+                        <div class="p-2">
+                            <button class="btn btn-success btn-sm">Bearbeiten</button>
+                            <button class="btn btn-primary btn-sm">Vergangene Eintragungen</button>
+                            <button class="btn btn-warning btn-sm">Neuer Eintrag</button>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Kitagruppe 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="gruppe2Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gruppe2" aria-expanded="false" aria-controls="gruppe2">
+                    Kitagruppe 2
+                </button>
+            </h2>
+            <div id="gruppe2" class="accordion-collapse collapse" aria-labelledby="gruppe2Header" data-bs-parent="#kitagruppenAccordion">
+                <div class="accordion-body">
+                    {% for child in gruppe2_children %}
+                    <div class="hstack gap-3 align-items-start mb-3">
+                        <div class="p-2">
+                            <strong>{{ child.vorname }} {{ child.nachname }}</strong>
+                        </div>
+                        <div class="p-2">Alter: {{ child.alter }} Jahre</div>
+                        <div class="p-2">Geschlecht: {{ child.geschlecht }}</div>
+                        <div class="p-2">Letzter Eintrag: {{ child.letzter_eintrag|date:"d.m.Y" }}</div>
+                        <div class="p-2">
+                            <button class="btn btn-success btn-sm">Bearbeiten</button>
+                            <button class="btn btn-primary btn-sm">Vergangene Eintragungen</button>
+                            <button class="btn btn-warning btn-sm">Neuer Eintrag</button>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Kitagruppe 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="gruppe3Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gruppe3" aria-expanded="false" aria-controls="gruppe3">
+                    Kitagruppe 3
+                </button>
+            </h2>
+            <div id="gruppe3" class="accordion-collapse collapse" aria-labelledby="gruppe3Header" data-bs-parent="#kitagruppenAccordion">
+                <div class="accordion-body">
+                    {% for child in gruppe3_children %}
+                    <div class="hstack gap-3 align-items-start mb-3">
+                        <div class="p-2">
+                            <strong>{{ child.vorname }} {{ child.nachname }}</strong>
+                        </div>
+                        <div class="p-2">Alter: {{ child.alter }} Jahre</div>
+                        <div class="p-2">Geschlecht: {{ child.geschlecht }}</div>
+                        <div class="p-2">Letzter Eintrag: {{ child.letzter_eintrag|date:"d.m.Y" }}</div>
+                        <div class="p-2">
+                            <button class="btn btn-success btn-sm">Bearbeiten</button>
+                            <button class="btn btn-primary btn-sm">Vergangene Eintragungen</button>
+                            <button class="btn btn-warning btn-sm">Neuer Eintrag</button>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

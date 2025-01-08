@@ -60,7 +60,7 @@ def logout():
 def index():
     return render_template('index.html')
 
-
+# TODO rebase groups.html to fit into Jinja2 Framework
 @app.route(rule='/groups')
 @login_required
 def groups():
