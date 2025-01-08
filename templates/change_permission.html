@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Change Role{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post" class="needs-validation" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label for="permission_level" class="form-label">Berechtigungsstufe</label>
+        {{ form.permission_level(class="form-select", id="permission_level") }}
+        <div class="invalid-feedback">
+            Bitte gebe eine korrekte Berechtigungsstufe an.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Berechtigungsstufe anpassen</button>
+</form>
+{% endblock %}

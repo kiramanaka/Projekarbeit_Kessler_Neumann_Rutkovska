@@ -15,11 +15,11 @@
     </button>
 </div>
 
-<div class="collapse" id="allUsers">
+<div class="collapse show" id="allUsers">
     <table class="table">
         <thead>
         <tr>
-            <th></th>
+            <th>Benutzername</th>
             <th>Vorname</th>
             <th>Nachname</th>
             <th>Nutzerberechtigungen</th>
@@ -32,10 +32,10 @@
             <td>{{ user.username }}</td>
             <td>{{ user.given_name }}</td>
             <td>{{ user.surname }}</td>
-            <td>{{ role_mapping[user.user_role] }}</td>
+            <td>{{ role_mapping[user.permission_level] }}</td>
             <td>
-                <a href="{{ url_for('change_password', userid=user.userid) }}" class="btn btn-warning">Passwort ändern</a>
-                <a href="{{ url_for('change_role', userid=user.userid) }}" class="btn btn-info">Berechtigungen anpassen</a>
+                <a href="{{ url_for('change_password', userid=user.id) }}" class="btn btn-warning">Passwort ändern</a>
+                <a href="{{ url_for('change_permission', userid=user.id) }}" class="btn btn-info">Berechtigungen anpassen</a>
             </td>
         </tr>
         {% endfor %}
@@ -45,50 +45,50 @@
 
 <div class="collapse" id="addUser">
     <form method="post" class="needs-validation" novalidate>
-        {{ admin_form.hidden_tag() }}
+        {{ form.hidden_tag() }}
         <div class="mb-3">
-            <label for="userid" class="form-label">UserID</label>
-            {{ admin_form.userid(class="form-control", id="userid") }}
+            <label for="username" class="form-label">Benutzername</label>
+            {{ form.username(class="form-control", id="username") }}
             <div class="invalid-feedback">
-                Bitte die Mercedes-Benz UserID eingeben.
+                Bitte den Benutzernamen angeben
             </div>
         </div>
         <div class="mb-3">
             <label for="given_name" class="form-label">Vorname</label>
-            {{ admin_form.given_name(class="form-control", id="given_name") }}
+            {{ form.given_name(class="form-control", id="given_name") }}
             <div class="invalid-feedback">
                 Bitte den Vornamen eingeben.
             </div>
         </div>
         <div class="mb-3">
             <label for="surname" class="form-label">Nachname</label>
-            {{ admin_form.surname(class="form-control", id="surname") }}
+            {{ form.surname(class="form-control", id="surname") }}
             <div class="invalid-feedback">
                 Bitte den Nachnamen eingeben.
             </div>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Passwort</label>
-            {{ admin_form.password(class="form-control", id="password") }}
+            {{ form.password(class="form-control", id="password") }}
             <div class="invalid-feedback">
                 Bitte das Passwort eingeben.
             </div>
         </div>
         <div class="mb-3">
-            <label for="password2" class="form-label">Passwort wiederholen</label>
-            {{ admin_form.password2(class="form-control", id="password2", oninput="checkPasswordMatch()") }}
+            <label for="confirm_password" class="form-label">Passwort wiederholen</label>
+            {{ form.confirm_password(class="form-control", id="confirm_password", oninput="checkPasswordMatch()") }}
             <div class="invalid-feedback">
                 Bitte das Passwort wiederholen.
             </div>
         </div>
         <div class="mb-3">
-            <label for="user_role" class="form-label">Berechtigungen</label>
-            {{ admin_form.user_role(class="form-select", id="user_role") }}
+            <label for="permission_level" class="form-label">Berechtigungen</label>
+            {{ form.permission_level(class="form-select", id="permission_level") }}
             <div class="invalid-feedback">
                 Bitte Berechtigungsstufe angeben.
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary">Nutzer anlegen</button>
     </form>
 </div>
 
@@ -125,9 +125,9 @@
 
     function checkPasswordMatch() {
         const password = document.getElementById('password').value;
-        const password2 = document.getElementById('password2').value;
-        const password2Input = document.getElementById('password2');
-        if (password !== password2) {
+        const confirm_password = document.getElementById('confirm_password').value;
+        const password2Input = document.getElementById('confirm_password');
+        if (password !== confirm_password) {
             password2Input.setCustomValidity('Passwords do not match');
         } else {
             password2Input.setCustomValidity('');

@@ -68,14 +68,14 @@ def groups():
     return render_template('groups.html', groups=group)
 
 
-@app.route(rule='/groups/view/<int:group_id>')
+@app.route(rule='/groups_view/<int:group_id>')
 @login_required
 def view_group(group_id):
     group = Group.query.filter_by(group_id=group_id).first_or_404()
     return render_template('view_group.html', group=group)
 
 
-@app.route(rule='/groups/edit/<int:group_id>', methods=['GET', 'POST'])
+@app.route(rule='/groups_edit/<int:group_id>', methods=['GET', 'POST'])
 @login_required
 def edit_group(group_id):
     group = Group.query.filter_by(group_id=group_id).first_or_404()
@@ -89,7 +89,7 @@ def edit_group(group_id):
     return render_template('edit_group.html', form=form)
 
 
-@app.route(rule='/groups/new', methods=['GET', 'POST'])
+@app.route(rule='/groups_new', methods=['GET', 'POST'])
 @login_required
 def new_group():
     form = GroupForm()
@@ -105,14 +105,14 @@ def new_group():
     return render_template('new_group.html')
 
 
-@app.route(rule='/children/view/<int:child_id>', methods=['GET', 'POST'])
+@app.route(rule='/children_view/<int:child_id>', methods=['GET', 'POST'])
 @login_required
 def view_child(child_id):
     child = Child.query.filter_by(child_id=child_id).first_or_404()
     return render_template('view_child.html', child=child)
 
 
-@app.route(rule='/children/edit/<int:child_id>', methods=['GET', 'POST'])
+@app.route(rule='/children_edit/<int:child_id>', methods=['GET', 'POST'])
 @login_required
 def edit_child(child_id):
     child = Child.query.filter_by(child_id=child_id).first_or_404()
@@ -129,7 +129,7 @@ def edit_child(child_id):
     return render_template('edit_child.html', form=form)
 
 
-@app.route(rule='/children/new', methods=['GET', 'POST'])
+@app.route(rule='/children_new', methods=['GET', 'POST'])
 @login_required
 def new_child():
     form = ChildForm()
@@ -148,19 +148,19 @@ def new_child():
     return render_template('new_child.html')
 
 # TODO Implement Observation handling
-@app.route(rule='/observations/view/<int:observation_id>')
+@app.route(rule='/observations_view/<int:observation_id>')
 @login_required
 def view_observations(observation_id):
     return render_template('view_observations.html')
 
 
-@app.route(rule="/observations/edit/<int:observation_id>", methods=['GET', 'POST'])
+@app.route(rule="/observations_edit/<int:observation_id>", methods=['GET', 'POST'])
 @login_required
 def edit_observations(observation_id):
     return render_template('edit_observations.html')
 
 
-@app.route(rule='/observations/new', methods=['GET', 'POST'])
+@app.route(rule='/observations_new', methods=['GET', 'POST'])
 @login_required
 def new_observations():
     return render_template('new_observations.html')
@@ -172,10 +172,12 @@ def user_management():
     """
     'user_management' allows administrators to create new users, change their passwords and change user roles.
     """
-    if current_user.permmission_id != 1:
+    if current_user.permission_level != 1:
         flash('Sie haben keine Berechtigung für diese Seite', 'danger')
         return redirect(url_for('index'))
     else:
+        users = User.query.order_by(User.surname).all()
+        role_mapping = {0: 'Benutzer', 1: 'Administrator', 2: 'Deaktiviert'}
         form = RegisterForm()
         if form.validate_on_submit():
             # noinspection PyArgumentList
@@ -186,23 +188,24 @@ def user_management():
                 surname=form.surname.data,
                 permission_level=form.permission_level.data
             )
-            db.Session.add(user)
-            db.Session.commit()
+            db.session.add(user)
+            db.session.commit()
             flash('Benutzer erfolgreich angelegt', 'success')
             return redirect(url_for('user_management'))
-        return render_template('user_management.html', form=form)
+        return render_template('user_management.html', form=form,
+                               users=users, role_mapping=role_mapping)
 
 
-@app.route(rule='/user_management/password/<int:userid>', methods=['GET', 'POST'])
+@app.route(rule='/user_management_password/<int:userid>', methods=['GET', 'POST'])
 @login_required
 def change_password(userid):
-    if current_user.permission_id != 1 or current_user.userid != userid:
+    if current_user.permission_level != 1 and current_user.id != userid:
         flash('Sie haben keine Berechtigung für diese Seite', 'danger')
         return redirect(url_for('index'))
     else:
         form = EditPasswordForm()
         if form.validate_on_submit():
-            user = User.query.filter_by(userid=userid).first_or_404()
+            user = User.query.filter(User.id == userid).first_or_404()
             user.password_hash = generate_password_hash(form.password.data)
             db.session.commit()
             flash('Passwort erfolgreich geändert', 'success')
@@ -213,21 +216,21 @@ def change_password(userid):
         return render_template('change_password.html', form=form)
 
 
-@app.route(rule='/user_management/permission/<int:userid>', methods=['GET', 'POST'])
+@app.route(rule='/user_management_permission/<int:userid>', methods=['GET', 'POST'])
 @login_required
-def change_permissions(userid):
-    if current_user.permission_id != 1:
+def change_permission(userid):
+    if current_user.permission_level != 1:
         flash('Sie haben keine Berechtigung für diese Seite', 'danger')
         return redirect(url_for('index'))
     else:
         form = EditPermissionsForm()
         if form.validate_on_submit():
-            user = User.query.filter_by(userid=userid).first_or_404()
+            user = User.query.filter(User.id == userid).first_or_404()
             user.permission_level = form.permission_level.data
             db.session.commit()
             flash('Berechtigungen erfolgreich geändert', 'success')
             return redirect(url_for('user_management'))
-        return render_template('change_permissions.html', form=form)
+        return render_template('change_permission.html', form=form)
 
 
 # TODO Remove db.create_all() after the first run
