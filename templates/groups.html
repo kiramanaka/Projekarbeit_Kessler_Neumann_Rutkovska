@@ -15,53 +15,36 @@
     </div>
 
     <div class="accordion" id="kitagruppenAccordion">
-        <!-- Kitagruppe 1 -->
+        <!-- Dynamische Kitagruppen -->
+        {% for group in groups %}
         <div class="accordion-item">
-            <h2 class="accordion-header" id="gruppe1Header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gruppe1" aria-expanded="true" aria-controls="gruppe1">
-                    Kitagruppe 1
+            <h2 class="accordion-header" id="group{{ loop.index }}Header">
+                <button class="accordion-button {% if not loop.first %}collapsed{% endif %}"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#group{{ loop.index }}"
+                        aria-expanded="{{ 'true' if loop.first else 'false' }}"
+                        aria-controls="group{{ loop.index }}">
+                    {{ group.group_name }}
                 </button>
             </h2>
-            <div id="gruppe1" class="accordion-collapse collapse show" aria-labelledby="gruppe1Header" data-bs-parent="#kitagruppenAccordion">
+            <div id="group{{ loop.index }}"
+                 class="accordion-collapse collapse {% if loop.first %}show{% endif %}"
+                 aria-labelledby="group{{ loop.index }}Header"
+                 data-bs-parent="#kitagruppenAccordion">
                 <div class="accordion-body">
-                    <!-- Dynamische Liste von Kindern -->
-                    {% for child in gruppe1_children %}
+                    {% for child in group.children %}
                     <div class="hstack gap-3 align-items-start mb-3">
                         <div class="p-2">
-                            <strong>{{ child.vorname }} {{ child.nachname }}</strong>
+                            <strong>{{ child.given_name }} {{ child.surname }}</strong>
                         </div>
-                        <div class="p-2">Alter: {{ child.alter }} Jahre</div>
-                        <div class="p-2">Geschlecht: {{ child.geschlecht }}</div>
-                        <div class="p-2">Letzter Eintrag: {{ child.letzter_eintrag|date:"d.m.Y" }}</div>
-                        <div class="p-2">
-                            <button class="btn btn-success btn-sm">Bearbeiten</button>
-                            <button class="btn btn-primary btn-sm">Vergangene Eintragungen</button>
-                            <button class="btn btn-warning btn-sm">Neuer Eintrag</button>
-                        </div>
-                    </div>
-                    <hr>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+                        <div class="p-2">Alter: {{ child.birth_date }}</div>
+                        <!-- neuer Wert "alter" berechnen? -->
+                        <div class="p-2">Geschlecht: {{ child.gender }}</div>
+                        <div class="p-2">Letzter Eintrag: {{ child.letzter_eintrag.strftime('%d.%m.%Y') }}</div>
+                        <!-- neuer Wert für letzter Eintrag? -->
+                        <!-- soll Betreuer mit in die Übersicht? -->
 
-        <!-- Kitagruppe 2 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="gruppe2Header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gruppe2" aria-expanded="false" aria-controls="gruppe2">
-                    Kitagruppe 2
-                </button>
-            </h2>
-            <div id="gruppe2" class="accordion-collapse collapse" aria-labelledby="gruppe2Header" data-bs-parent="#kitagruppenAccordion">
-                <div class="accordion-body">
-                    {% for child in gruppe2_children %}
-                    <div class="hstack gap-3 align-items-start mb-3">
-                        <div class="p-2">
-                            <strong>{{ child.vorname }} {{ child.nachname }}</strong>
-                        </div>
-                        <div class="p-2">Alter: {{ child.alter }} Jahre</div>
-                        <div class="p-2">Geschlecht: {{ child.geschlecht }}</div>
-                        <div class="p-2">Letzter Eintrag: {{ child.letzter_eintrag|date:"d.m.Y" }}</div>
                         <div class="p-2">
                             <button class="btn btn-success btn-sm">Bearbeiten</button>
                             <button class="btn btn-primary btn-sm">Vergangene Eintragungen</button>
@@ -73,35 +56,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Kitagruppe 3 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="gruppe3Header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gruppe3" aria-expanded="false" aria-controls="gruppe3">
-                    Kitagruppe 3
-                </button>
-            </h2>
-            <div id="gruppe3" class="accordion-collapse collapse" aria-labelledby="gruppe3Header" data-bs-parent="#kitagruppenAccordion">
-                <div class="accordion-body">
-                    {% for child in gruppe3_children %}
-                    <div class="hstack gap-3 align-items-start mb-3">
-                        <div class="p-2">
-                            <strong>{{ child.vorname }} {{ child.nachname }}</strong>
-                        </div>
-                        <div class="p-2">Alter: {{ child.alter }} Jahre</div>
-                        <div class="p-2">Geschlecht: {{ child.geschlecht }}</div>
-                        <div class="p-2">Letzter Eintrag: {{ child.letzter_eintrag|date:"d.m.Y" }}</div>
-                        <div class="p-2">
-                            <button class="btn btn-success btn-sm">Bearbeiten</button>
-                            <button class="btn btn-primary btn-sm">Vergangene Eintragungen</button>
-                            <button class="btn btn-warning btn-sm">Neuer Eintrag</button>
-                        </div>
-                    </div>
-                    <hr>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
