@@ -1,4 +1,6 @@
-from flask import Flask, flash, redirect, render_template, url_for
+from datetime import datetime, date
+
+from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from flask_wtf import CSRFProtect
@@ -21,6 +23,11 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
 
+@app.template_filter('fromtimestamp')
+def fromtimestamp_filter(s):
+    return datetime.utcfromtimestamp(int(s)).date() if s else None
+
+
 @login_manager.user_loader
 def load_user(id):
     return db.session.get(User, id)
@@ -30,6 +37,7 @@ def load_user(id):
 def login():
     form = LoginForm()
     if form.validate_on_submit():
+        print(generate_password_hash(form.password.data))
         user = User.query.filter_by(username=form.username.data.lower()).first()
         if user:
             if check_password_hash(user.password_hash, form.password.data):
@@ -60,56 +68,50 @@ def logout():
 def index():
     return render_template('index.html')
 
-# TODO rebase groups.html to fit into Jinja2 Framework
+
 @app.route(rule='/groups')
 @login_required
 def groups():
     group = Group.query.order_by(Group.group_name).all()
-    return render_template('groups.html', groups=group)
+    current_date = date.today()  # Wichtig: date-Objekt statt datetime
+    return render_template('groups.html', groups=group, current_date=current_date)
 
 
-@app.route(rule='/groups_view/<int:group_id>')
+@app.route(rule='/groups_edit', methods=['GET', 'POST'])
 @login_required
-def view_group(group_id):
-    group = Group.query.filter_by(group_id=group_id).first_or_404()
-    return render_template('view_group.html', group=group)
+def edit_groups():
+    group = Group.query.order_by(Group.group_name).all()
+    return render_template('edit_groups.html', groups=group)
 
 
-@app.route(rule='/groups_edit/<int:group_id>', methods=['GET', 'POST'])
+@app.route(rule='/groups_edit/<int:group_id>', methods=['POST', 'DELETE'])
 @login_required
 def edit_group(group_id):
     group = Group.query.filter_by(group_id=group_id).first_or_404()
-    form = GroupForm(obj=group)
-    if form.validate_on_submit():
-        group.group_name = form.group_name.data
-        group.children = form.children.data
+
+    if request.method == 'POST':
+        data = request.get_json()
+        group.group_name = data['group_name']
         db.session.commit()
-        flash('Gruppe erfolgreich geändert', 'success')
-        return redirect(url_for('groups'))
-    return render_template('edit_group.html', form=form)
+        return jsonify(success=True)
+
+    if request.method == 'DELETE':
+        if not group.children:
+            db.session.delete(group)
+            db.session.commit()
+            return jsonify(success=True)
+        else:
+            return jsonify(success=False, message='Gruppe enthält noch Kinder. Gruppe kann nicht gelöscht werden.')
 
 
-@app.route(rule='/groups_new', methods=['GET', 'POST'])
+@app.route(rule='/groups_new', methods=['POST'])
 @login_required
 def new_group():
-    form = GroupForm()
-    if form.validate_on_submit():
-        group = Group(
-            group_name=form.group_name.data,
-            children=form.children.data
-        )
-        db.session.add(group)
-        db.session.commit()
-        flash('Gruppe erfolgreich angelegt', 'success')
-        return redirect(url_for('groups'))
-    return render_template('new_group.html')
-
-
-@app.route(rule='/children_view/<int:child_id>', methods=['GET', 'POST'])
-@login_required
-def view_child(child_id):
-    child = Child.query.filter_by(child_id=child_id).first_or_404()
-    return render_template('view_child.html', child=child)
+    data = request.get_json()
+    group = Group(group_name=data['group_name'])
+    db.session.add(group)
+    db.session.commit()
+    return jsonify(success=True, group_id=group.group_id)
 
 
 @app.route(rule='/children_edit/<int:child_id>', methods=['GET', 'POST'])
@@ -133,19 +135,22 @@ def edit_child(child_id):
 @login_required
 def new_child():
     form = ChildForm()
+    form.group.choices = [(group.group_id, group.group_name) for group in Group.query.order_by(Group.group_name).all()]
     if form.validate_on_submit():
+        birth_date = datetime.combine(form.birth_date.data, datetime.min.time())
+        birth_date_timestamp = int(birth_date.timestamp())
         child = Child(
             given_name=form.given_name.data,
             surname=form.surname.data,
-            birth_date=form.birth_date.data,
+            birth_date=birth_date_timestamp,
             gender=form.gender.data,
-            supervisor=form.supervisor.data
+            group_id=form.group.data
         )
         db.session.add(child)
         db.session.commit()
         flash('Kind erfolgreich angelegt', 'success')
         return redirect(url_for('groups'))
-    return render_template('new_child.html')
+    return render_template('new_child.html', form=form)
 
 # TODO Implement Observation handling
 @app.route(rule='/observations_view/<int:observation_id>')
@@ -233,7 +238,6 @@ def change_permission(userid):
         return render_template('change_permission.html', form=form)
 
 
-# TODO Remove db.create_all() after the first run
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()

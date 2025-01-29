@@ -56,14 +56,8 @@ class ChildForm(FlaskForm):
     birth_date = DateField('Geburtsdatum', validators=[DataRequired()])
     gender = SelectField('Geschlecht', choices=[('m', 'Männlich'), ('w', 'Weiblich'), ('d', 'Divers')],
                          validators=[DataRequired()])
-    supervisor = SelectField('Betreuer', validators=[DataRequired()])
-
-    def __init__(self, *args, **kwargs):
-        super(EditChildForm, self).__init__(*args, **kwargs)
-        with current_app.app_context():
-            betreuer = User.query.order_by(User.surname).all()
-            self.supervisor.choices = [(b.id, f"{b.surname} {b.given_name}") for b in betreuer]
-
+    group = SelectField('Gruppe', coerce=int)
+    submit = SubmitField('Speichern')
 
 class ObservationForm(FlaskForm):
     pass

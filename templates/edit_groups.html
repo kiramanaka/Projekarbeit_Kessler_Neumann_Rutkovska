@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+    {% block header %}
+    <h1>{% block title %}Gruppen bearbeiten{% endblock %}</h1>
+    {% endblock %}
+
+    {% block content %}
+    <div class="container mt-4">
+        <div class="card m-5">
+            <div class="card-body">
+                Hier sind alle Gruppen aufgelistet, die in der Datenbank gespeichert sind. Sie können den Namen einer Gruppe
+                ändern, indem Sie den Text in das Textfeld eingeben und die Eingabetaste drücken. Um eine Gruppe zu löschen,
+                klicken Sie auf den roten Knopf neben der Gruppe.
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" id="new-group-name" class="form-control d-inline-block w-75" placeholder="Neuer Gruppenname">
+            <button id="add-group" class="btn btn-primary">Gruppe hinzufügen</button>
+        </div>
+        <div id="groups-list">
+            {% for group in groups %}
+            <div class="group-item mb-3" data-group-id="{{ group.group_id }}">
+                <input type="text" class="form-control d-inline-block w-75 group-name" value="{{ group.group_name }}">
+                <button class="btn btn-danger btn-sm delete-group">Gruppe löschen</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.group-name').forEach(function (input) {
+            input.addEventListener('change', function () {
+                const groupId = this.closest('.group-item').dataset.groupId;
+                const groupName = this.value;
+                fetch(`/groups_edit/${groupId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({ group_name: groupName })
+                }).then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Gruppenname erfolgreich aktualisiert');
+                        } else {
+                            alert('Gruppenname konnte nicht aktualisiert werden');
+                        }
+                    });
+            });
+        });
+
+        document.querySelectorAll('.delete-group').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const groupId = this.closest('.group-item').dataset.groupId;
+                fetch(`/groups_edit/${groupId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token() }}'
+                    }
+                }).then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            this.closest('.group-item').remove();
+                        } else {
+                            alert(data.message);
+                        }
+                    });
+            });
+        });
+
+        document.getElementById('add-group').addEventListener('click', function () {
+            const groupName = document.getElementById('new-group-name').value.trim();
+            if (groupName === '') {
+                alert('Der Gruppenname darf nicht leer sein.');
+                return;
+            }
+            fetch('/groups_new', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({ group_name: groupName })
+            }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const newGroup = document.createElement('div');
+                        newGroup.classList.add('group-item', 'mb-3');
+                        newGroup.dataset.groupId = data.group_id;
+                        newGroup.innerHTML = `
+                          <input type="text" class="form-control d-inline-block w-75 group-name" value="${groupName}">
+                          <button class="btn btn-danger btn-sm delete-group">Gruppe löschen</button>
+                      `;
+                        document.getElementById('groups-list').appendChild(newGroup);
+                        document.getElementById('new-group-name').value = '';
+                    } else {
+                        alert('Gruppe konnte nicht hinzugefügt werden');
+                    }
+                });
+        });
+    });
+</script>
+    {% endblock %}
