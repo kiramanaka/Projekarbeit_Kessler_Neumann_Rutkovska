@@ -16,7 +16,7 @@ class User(UserMixin, db.Model):
 class Group(db.Model):
     group_id = db.Column(db.Integer, primary_key=True)
     group_name = db.Column(db.String(80), nullable=False)
-    children = db.relationship('Child', back_populates='group')  # Corrected back_populates
+    children = db.relationship('Child', back_populates='group')
 
 
 class Child(db.Model):
@@ -27,13 +27,13 @@ class Child(db.Model):
     gender = db.Column(db.String(1), nullable=False)
     last_observation = db.Column(db.String(10))
     group_id = db.Column(db.Integer, db.ForeignKey('group.group_id'), nullable=False)
-    group = db.relationship('Group', back_populates='children')  # Corrected back_populates
-    observations = db.relationship('Observations', backref='child', lazy=True)  # Corrected backref
+    group = db.relationship('Group', back_populates='children')
+    observations = db.relationship('Observations', backref='child', lazy=True)
 
 
 class Observations(db.Model):
     observation_id = db.Column(db.Integer, primary_key=True)
-    child_id = db.Column(db.Integer, db.ForeignKey('child.child_id'), nullable=False)  # Renamed to child_id
+    child_id = db.Column(db.Integer, db.ForeignKey('child.child_id'), nullable=False)
     observation_date = db.Column(db.Integer, nullable=False)
     observation_data = db.Column(db.JSON, nullable=False)
     is_finished = db.Column(db.Boolean, default=False)

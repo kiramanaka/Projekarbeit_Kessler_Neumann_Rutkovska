@@ -118,17 +118,26 @@ def new_group():
 @login_required
 def edit_child(child_id):
     child = Child.query.filter_by(child_id=child_id).first_or_404()
-    form = ChildForm(obj=child)
+    child_id = child.child_id
+    # Convert Unix timestamp to date object for the form
+    child.birth_date = datetime.utcfromtimestamp(child.birth_date).date()
+    form = ChildForm(obj=child)  # Initializes all fields with child's data
+    # Set group choices and default
+    form.group.choices = [(group.group_id, group.group_name) for group in Group.query.order_by(Group.group_name).all()]
+    form.group.default = child.group_id
+    form.process()  # Applies the default group without resetting other fields
     if form.validate_on_submit():
         child.given_name = form.given_name.data
         child.surname = form.surname.data
-        child.birth_date = form.birth_date.data
+        # Convert date object back to Unix timestamp
+        birth_date = datetime.combine(form.birth_date.data, datetime.min.time())
+        child.birth_date = int(birth_date.timestamp())
         child.gender = form.gender.data
-        child.supervisor = form.supervisor.data
+        child.group_id = form.group.data
         db.session.commit()
         flash('Kind erfolgreich geändert', 'success')
         return redirect(url_for('groups'))
-    return render_template('edit_child.html', form=form)
+    return render_template('edit_child.html', form=form, child_id=child_id)
 
 
 @app.route(rule='/children_new', methods=['GET', 'POST'])
@@ -150,7 +159,20 @@ def new_child():
         db.session.commit()
         flash('Kind erfolgreich angelegt', 'success')
         return redirect(url_for('groups'))
+    if form.errors:
+        flash('Fehler beim Anlegen des Kindes. Alle Felder müssen ausgefüllt sein.', 'danger')
     return render_template('new_child.html', form=form)
+
+
+@app.route(rule='/children_delete/<int:child_id>', methods=['POST'])
+@login_required
+# TODO Nachsehen ob Beobachtungen mit dem Kind gelöscht werden
+def delete_child(child_id):
+    child = Child.query.filter_by(child_id=child_id).first_or_404()
+    db.session.delete(child)
+    db.session.commit()
+    flash('Kind und alle zugehörigen Beobachtungen wurden erfolgreich gelöscht', 'success')
+    return redirect(url_for('groups'))
 
 # TODO Implement Observation handling
 @app.route(rule='/observations_view/<int:observation_id>')

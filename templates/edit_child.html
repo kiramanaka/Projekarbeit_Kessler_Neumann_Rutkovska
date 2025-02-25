@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Kind bearbeiten{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post" class="needs-validation" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label for="given_name" class="form-label">Vorname</label>
+        {{ form.given_name(class="form-control", id="given_name") }}
+        <div class="invalid-feedback">
+            Bitte den Vornamen eingeben.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="surname" class="form-label">Nachname</label>
+        {{ form.surname(class="form-control", id="surname") }}
+        <div class="invalid-feedback">
+            Bitte den Nachnamen eingeben.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="birth_date" class="form-label">Geburtsdatum</label>
+        {{ form.birth_date(class="form-control", id="birth_date") }}
+        <div class="invalid-feedback">
+            Bitte das Geburtsdatum eingeben.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="gender" class="form-label">Geschlecht</label>
+        {{ form.gender(class="form-select", id="gender") }}
+        <div class="invalid-feedback">
+            Bitte das Geschlecht angeben.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="group" class="form-label">Gruppe</label>
+        {{ form.group(class="form-select", id="group") }}
+        <div class="invalid-feedback">
+            Bitte die Gruppe auswählen.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Speichern</button>
+    <button type="button" class="btn btn-danger" id="delete-button">Löschen</button>
+</form>
+<script>
+    document.getElementById('delete-button').addEventListener('click', function() {
+        if (confirm('Sind Sie sicher, dass Sie dieses Kind und alle zugehörigen Beobachtungen löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.')) {
+            fetch('{{ url_for("delete_child", child_id=child_id) }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token() }}'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '{{ url_for("groups") }}';
+                } else {
+                    alert('Fehler beim Löschen des Kindes.');
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}
