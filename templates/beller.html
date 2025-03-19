@@ -5,10 +5,26 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+
+<div class="container">
     <div class="row">
 
-        <!-- Navigationsleiste links -->
+        <nav class="col-sm-3" id="myScrollspy">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+                <li><a href="#section4">Section 4</a></li>
+                <li><a href="#section5">Section 5</a></li>
+                <li><a href="#section6">Section 6</a></li>
+                <li><a href="#section7">Section 7</a></li>
+                <li><a href="#section8">Section 8</a></li>
+                <li><a href="#section9">Section 9</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- Linke Spalte mit Navigationsleiste
         <div class="col-md-3">
             <div id="list-example" class="list-group">
                 <a class="list-group-item list-group-item-action" href="#frage-1">Frage 1</a>
@@ -21,14 +37,13 @@
                 <a class="list-group-item list-group-item-action" href="#frage-8">Frage 8</a>
                 <a class="list-group-item list-group-item-action" href="#frage-9">Frage 9</a>
             </div>
-        </div>
+        </div>-->
 
         <!-- Mittlere Spalte mit scrollbarem Fragenbereich -->
         <div class="col-md-6">
             <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example p-3 border rounded" style="max-height: 700px; overflow-y: auto;" tabindex="0">
-
                 <!-- Beispiel-Fragen -->
-                <div class="card p-4 mb-4" id="frage-1">
+                <div class="card p-4 mb-4" id="section1">
                     <h3>Frage 1:</h3>
                     <h5>Kann das Kind seinen Namen sagen?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -39,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="card p-4 mb-4" id="frage-2">
+                <div class="card p-4 mb-4" id="section2">
                     <h3>Frage 2:</h3>
                     <h5>Kann das Kind bis 10 zählen?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -50,7 +65,7 @@
                     </div>
                 </div>
 
-                <div class="card p-4 mb-4" id="frage-3">
+                <div class="card p-4 mb-4" id="section3">
                     <h3>Frage 3:</h3>
                     <h5>Kann das Kind Farben unterscheiden?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -61,7 +76,7 @@
                     </div>
                 </div>
 
-                <div class="card p-4 mb-4" id="frage-4">
+                <div class="card p-4 mb-4" id="section4">
                     <h3>Frage 4:</h3>
                     <h5>Kann das Kind einfache Sätze bilden?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -71,7 +86,7 @@
                         <button class="btn btn-success btn-lg square"></button>
                     </div>
                 </div>
-                <div class="card p-4 mb-4" id="frage-5">
+                <div class="card p-4 mb-4" id="section5">
                     <h3>Frage 5:</h3>
                     <h5>Kann das Kind seinen Namen sagen?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -81,7 +96,7 @@
                         <button class="btn btn-success btn-lg square"></button>
                     </div>
                 </div>
-                <div class="card p-4 mb-4" id="frage-6">
+                <div class="card p-4 mb-4" id="section6">
                     <h3>Frage 6:</h3>
                     <h5>Kann das Kind seinen Namen sagen?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -91,7 +106,7 @@
                         <button class="btn btn-success btn-lg square"></button>
                     </div>
                 </div>
-                <div class="card p-4 mb-4" id="frage-7">
+                <div class="card p-4 mb-4" id="section7">
                     <h3>Frage 7:</h3>
                     <h5>Kann das Kind seinen Namen sagen?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -101,7 +116,7 @@
                         <button class="btn btn-success btn-lg square"></button>
                     </div>
                 </div>
-                <div class="card p-4 mb-4" id="frage-8">
+                <div class="card p-4 mb-4" id="section8">
                     <h3>Frage 8:</h3>
                     <h5>Kann das Kind seinen Namen sagen?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -111,7 +126,7 @@
                         <button class="btn btn-success btn-lg square"></button>
                     </div>
                 </div>
-                <div class="card p-4 mb-4" id="frage-9">
+                <div class="card p-4 mb-4" id="section9">
                     <h3>Frage 9:</h3>
                     <h5>Kann das Kind seinen Namen sagen?</h5>
                     <div class="d-flex justify-content-center gap-4">
@@ -124,7 +139,7 @@
             </div>
         </div>
 
-        <!-- Rechte Spalte mit Erklärungen (zu den Farben) -->
+        <!-- Rechte Spalte mit Erklärung -->
         <div class="col-md-3">
             <div class="list-group">
                 <a class="list-group-item text-dark" style="background-color: #d6d6d6;">Grau = Kind weiß die Aufgabe nicht</a>
@@ -150,5 +165,6 @@
         height: 40px;
         border-radius: 8px;
     }
-</style>
+
 {% endblock %}
+</style>
