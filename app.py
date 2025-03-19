@@ -1,13 +1,14 @@
 from datetime import datetime, date
+import json
 
-from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
+from flask import Flask, flash, jsonify, redirect, render_template, request, url_for, session
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 from flask_wtf import CSRFProtect
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from forms import ChildForm, GroupForm, EditPasswordForm, EditPermissionsForm, LoginForm, RegisterForm
-from models import Child, Group, User, db
+from models import Child, Group, Observations, User, db
 
 """
 Initialization of the Flask app, the database, the CSRF protection, the login manager and the user loader.
@@ -181,16 +182,85 @@ def view_observations(observation_id):
     return render_template('view_observations.html')
 
 
-@app.route(rule="/observations_edit/<int:observation_id>", methods=['GET', 'POST'])
+@app.route(rule='/record_observation/init/<child_id>', methods=['GET', 'POST'])
 @login_required
-def edit_observations(observation_id):
-    return render_template('edit_observations.html')
+def init_obs(child_id):
+    observation_data = {}
+    with open('static/entwicklungsmerkmale.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    child = Child.query.filter_by(child_id=child_id).first_or_404()
+    observation_id = Observations.query.all.count() + 1
+    sector_names = list(data['sectors'].keys())
+
+    birth_date = datetime.fromtimestamp(child.birth_date).date()
+    age_in_months = (date.today().year - birth_date.year) * 12 + (date.today().month - birth_date.month)
+    starting_phase = 'phase14'
+    sorted_phases = sorted(data['phaseToAge'].items(), key=lambda item: item[1])
+    for i in range(len(sorted_phases)):
+        phase, age = sorted_phases[i]
+        if age_in_months <= age:
+            if i > 0:
+                starting_phase = sorted_phases[i - 1][0]
+            else:
+                starting_phase = phase
+            break
+    observation_data['starting_phase'] = starting_phase
+    observation = Observations(
+        observation_id=observation_id,
+        child_id=child_id,
+        observation_data=jsonify(observation_data)
+    )
+    db.session.add(observation)
+    db.session.commit()
+    return render_template('observation_sectors.html', sector_names=sector_names, current_phase=starting_phase,
+                           observation_id=observation_id)
 
 
-@app.route(rule='/observations_new', methods=['GET', 'POST'])
+@app.route(rule='/record_observation/<observation_id>/<sector>/<phase>', methods=['GET', 'POST'])
 @login_required
-def new_observations():
-    return render_template('new_observations.html')
+def record_observation(observation_id, sector, phase):
+    with open('static/entwicklungsmerkmale.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    sector_data = data['sectors'][sector]
+    phase_data = sector_data[phase]
+    observation = Observations.query.filter_by(observation_id=observation_id).first_or_404()
+    observation_data = observation['observation_data']
+    observation_data['sector']['current_phase'] = phase
+    observation['observation_data'] = jsonify(observation_data)
+    db.session.commit()
+    return render_template('observation_phase.html', phase_data=phase_data, sector=sector,
+                           current_phase=phase, observation_id=observation_id)
+
+
+@app.route(rule='/record_observation/<observation_id>/<sector>/interaction', methods=['POST', 'PUT'])
+@login_required
+def interaction(observation_id, sector):
+    """
+    A POST Request will save all answers in observation_data and request the next phase based on the rules set by Kuno
+    Beller's development chart. If the final phase in a sector has been completed, it will save and return to the sector
+    overview.
+    A PUT Request will save all current data for the current phase and sector and return to the sector overview without
+    changing the phase.
+
+    :param observation_id: The id of the current observation being worked on
+    :param sector: The current sector being worked on
+    :return after a POST, json data containing the next phase data, or a redirect to the sector overview.
+        after a PUT, just a redirect to the sector overview.
+    """
+    with open('static/entwicklungsmerkmale.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    observation = Observations.query.filter_by(observation_id=observation_id).first_or_404()
+    sector_data = data['sectors'][sector]
+    phases = data['phaseToAge']
+    observation_data = observation['observation_data']
+    if request.method == 'POST':
+        request_data = request.get_json()
+        # count the score from the answers. 0, 0.5, 1 are valid answers
+        answers = request_data['Answers']
+        score = 0
+
+
+
 
 
 @app.route(rule='/user_management', methods=['GET', 'POST'])
