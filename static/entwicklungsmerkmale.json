@@ -170,7 +170,7 @@
                     },
                     {
                         "description": "Hilft freiwillig den Raum aufzuräumen und sauberzumachen.",
-                        "example": "Schließt sich spontan dem Erzieher an, wenn er anfängt, Spielzeuge und andere Gegendstände wegzuräumen."
+                        "example": "Schließt sich spontan dem Erzieher an, wenn er anfängt, Spielzeuge und andere Gegenstände wegzuräumen."
                     },
                     {
                         "description": "Übernimmt die Verantwortung für kleinere Besorgungen und erledigt sie.",
@@ -310,7 +310,7 @@
                     },
                     {
                         "description": "Tobt sich manchmal bis zur Erschöpfung aus.",
-                        "example": "Ziel der Tätigkeit des Kindes ist die körperliche Erschöpfung und nicht etwa die Freude an Kompoetenz in der Durchführung oder Üben von Tätigkeiten, z.B. Rennen ohne äußeres Ziel - das Ziel ist Erschöpfung."
+                        "example": "Ziel der Tätigkeit des Kindes ist die körperliche Erschöpfung und nicht etwa die Freude an Kompetenz in der Durchführung oder Üben von Tätigkeiten, z.B. Rennen ohne äußeres Ziel - das Ziel ist Erschöpfung."
                     }
                 ]
             },
@@ -377,7 +377,7 @@
                 "items": [
                     {
                         "description": "Reagiert auf Veränderungen und Unterschiede von Sinnesreizen.",
-                        "example": "Bsp: Temperaturveränderungen, Geschmacksunterschiede: süß, sauer, bitter, etc., sowie auf unterschiedliche Geräusche und Stimmen, unterbicht Saugen, wenn es eine unbekannte Stimme oder ein unbekanntes Geräusch hört."
+                        "example": "Bsp: Temperaturveränderungen, Geschmacksunterschiede: süß, sauer, bitter, etc., sowie auf unterschiedliche Geräusche und Stimmen, unterbricht Saugen, wenn es eine unbekannte Stimme oder ein unbekanntes Geräusch hört."
                     },
                     {
                         "description": "Fixiert sich bewegende oder glänzende Gegenstände mit den Augen.",
@@ -565,7 +565,7 @@
                     },
                     {
                         "description": "Setzt Erfahrungen in Beziehung zueinander.",
-                        "example": "Ereinnert sich an Plätze, Leute, Ereignisse; sagt, wenn es einen Rasen nicht betreten darf: \"Aber bei dem anderen Spielplatz darf man auf den Rasen\"."
+                        "example": "Erinnert sich an Plätze, Leute, Ereignisse; sagt, wenn es einen Rasen nicht betreten darf: \"Aber bei dem anderen Spielplatz darf man auf den Rasen\"."
                     },
                     {
                         "description": "Drückt Ängste verbal oder durch klare Gesten aus.",
@@ -573,7 +573,7 @@
                     },
                     {
                         "description": "Kennt die richtige Bezeichnung für Verwandte.",
-                        "example": "Richtige Verwandschaftsbezeichnung wie z.B. Bruder, Onkel, Tante, Oma."
+                        "example": "Richtige Verwandtschaftsbezeichnung wie z.B. Bruder, Onkel, Tante, Oma."
                     }
                 ]
             },
@@ -656,7 +656,7 @@
                         "example": "Land, Stadt, Bezirk, Straße, Hausnummer."
                     },
                     {
-                        "description": "Unterscheidet Hell- und Dunke-Abstufungen von Farben. ",
+                        "description": "Unterscheidet Hell- und Dunkel-Abstufungen von Farben. ",
                         "example": "Hell- und Dunkelblau, -grün, -grau. \"Ich habe einen dunkelblauen Pulli, deiner ist hellblau.\""
                     }
                 ]
@@ -681,7 +681,7 @@
                     },
                     {
                         "description": "Zeigt großes Interesse am Kalender und an der Uhr.",
-                        "example": "Kennt die Funktion eines Kalenders, steht davor und will von der Erzieherin wissen, welcher Tag heute ist oder will seinen Geburstag auf dem Kalender gezeigt haben. Erkundigt sich nach der Uhrzeit, auch wenn diese nicht mit einem bestimmten Ereignis verknüpft ist."
+                        "example": "Kennt die Funktion eines Kalenders, steht davor und will von der Erzieherin wissen, welcher Tag heute ist oder will seinen Geburtstag auf dem Kalender gezeigt haben. Erkundigt sich nach der Uhrzeit, auch wenn diese nicht mit einem bestimmten Ereignis verknüpft ist."
                     },
                     {
                         "description": "Verfügt über eine gute räumliche Orientierung, die über den vertrauen Raum hinausreicht.",
@@ -692,8 +692,8 @@
             "phase14": {
                 "items": [
                     {
-                        "description": "Üerquert Straßen sicher und selbstständig.",
-                        "example": "Kennt und beachtet die Funktion der Ampel, rennt nicht über die Straße und sieht erst nach links und rechts, bevor es die Straße überquest; achtet auf den Radweg."
+                        "description": "Überquert Straßen sicher und selbstständig.",
+                        "example": "Kennt und beachtet die Funktion der Ampel, rennt nicht über die Straße und sieht erst nach links und rechts, bevor es die Straße überquert; achtet auf den Radweg."
                     },
                     {
                         "description": "Verbindet Jahreszeiten mit Eigenschaften und möglichen Tätigkeiten.",
@@ -1133,11 +1133,11 @@
                         "example": "Wenn ein Kind aus Versehen über ein Bauwerk stolpert, sagt es: \"Das hat er doch nicht mit Absicht gemacht!\" oder wenn jemand über sein Bauwerk stolpert: \"Pass’ doch besser auf nächstes Mal.\" oder in einer anderen Situation: \"Du hast ihn geschubst. Du hast ihm mit Absicht weh getan!\""
                     },
                     {
-                        "description": "Verbalisert mögliche Konsequenzen seiner Handlung im Voraus.",
+                        "description": "Verbalisiert mögliche Konsequenzen seiner Handlung im Voraus.",
                         "example": "\"Wenn ich das Mama schenke, wird Papa traurig sein, weil er nichts kriegt.\" Oder: \"Wenn wir sie nicht mitspielen lassen, wird sie ganz allein sein.\" Oder: \"Wenn wir zu laut sind, wecken wir die Schlafkinder auf.\""
                     },
                     {
-                        "description": "Verbalisert soziale Konfliktlösungen.",
+                        "description": "Verbalisiert soziale Konfliktlösungen.",
                         "example": "Wenn es darum geht, wer jetzt die Schaukel oder das Puppenhaus haben darf, schlägt es vor: \"Du kannst es vor dem Mittagessen haben, ich aber dann danach.\" Oder: \"Lass uns doch zusammenspielen.\""
                     },
                     {
